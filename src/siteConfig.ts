@@ -1,0 +1,156 @@
+/**
+ * MEME COIN ELITE - Global Site & Package Configuration
+ * Easily update contact links, package prices, support durations, and business details here.
+ */
+
+export const SITE_CONFIG = {
+  siteName: "Meme Coin Elite",
+  tagline: "MEME COIN CREATION • BRANDING • LAUNCH SUPPORT",
+  
+  // Contact Channels
+  whatsapp: "https://wa.me/Rehan100000?text=Hello%20Meme%20Coin%20Elite%2C%20I%20am%20interested%20in%20your%20services.",
+  telegram: "https://t.me/MirzaRehan6",
+  email: "memecoinelite@gmail.com",
+
+  // Direct Communication Link Generators
+  getWhatsAppUrl: (text?: string) => {
+    const encoded = encodeURIComponent(text || "Hello Meme Coin Elite, I am interested in your services.");
+    return `https://wa.me/Rehan100000?text=${encoded}`;
+  },
+  getTelegramUrl: () => "https://t.me/MirzaRehan6",
+  getGmailUrl: (subject: string, body: string) => 
+    `https://mail.google.com/mail/?view=cm&fs=1&to=memecoinelite@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
+  getMailtoUrl: (subject: string, body: string) =>
+    `mailto:memecoinelite@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
+
+  // Response Time Notice
+  responseNotice: "Please note: There may be a short response delay. We will review your inquiry and contact you within 1–2 business days.",
+
+  // Business Operational Info
+  supportDays: "14 Days",
+  businessHours: {
+    weekdays: "Monday – Thursday: 10:00 AM – 9:00 PM",
+    weekend: "Friday – Saturday: 3:00 PM – 6:00 PM",
+    sunday: "Sunday: Closed",
+    timezone: "Pakistan Standard Time (PKT)"
+  },
+
+  // Special Startup Offer Setting
+  firstTwoClientOffer: {
+    enabled: true,
+    price: 250,
+    headline: "SPECIAL STARTUP OFFER",
+    subheadline: "FIRST 2 CLIENTS ONLY",
+    offerText: "ANY PACKAGE — $250",
+    note: "Limited to the first 2 confirmed clients."
+  }
+};
+
+export const PACKAGE_CONFIG = {
+  advanced: {
+    id: "advanced",
+    name: "Advanced",
+    price: 1299,
+    originalPrice: 1380,
+    discount: 81,
+    solRequirement: "5.7 SOL",
+    badge: "Popular Starter",
+    description: "Essential full-service meme coin setup and launch preparation for aspiring project founders.",
+    supportPeriod: "14 Days",
+    includedFeatures: [
+      "Meme coin creation & smart token configuration",
+      "Professional branding & visual styling guide",
+      "Custom logo design based on your instructions (No image upload required)",
+      "Token supply setup (10M to 100B or custom)",
+      "Project requirement & launch checklist preparation",
+      "Website link & metadata project integration",
+      "Social media setup & management guidance (X, Telegram, Discord, TikTok, etc.)",
+      "Launch day preparation & deployment assistance",
+      "Liquidity planning guidance & allocation strategy",
+      "14 Days client support for delivered work"
+    ],
+    addOns: [
+      { name: "Full Social Media / Community Setup", price: "+$100" },
+      { name: "New Dedicated Project Website & Basic Hosting", price: "+$100" },
+      { name: "Additional Custom Changes (Scope revisions)", price: "+$25" }
+    ],
+    notes: [
+      "Project Requirement: 5.7 SOL (blockchain launch requirement, not sent through website)",
+      "Advertising is not included (optional budgets: $100, $200, $300, $500, $1,000)",
+      "No guaranteed profits, token prices, or market volume"
+    ]
+  },
+
+  business: {
+    id: "business",
+    name: "Business",
+    price: 1999,
+    originalPrice: 2238,
+    discount: 239,
+    solRequirement: "6–7 SOL",
+    badge: "Most Recommended",
+    description: "Expanded branding, marketing preparation, and project guidance for dedicated meme coin teams.",
+    supportPeriod: "30 Days",
+    includedFeatures: [
+      "Advanced meme coin creation assistance",
+      "Professional branding & comprehensive aesthetic suite",
+      "Logo design tailored to client's detailed creative vision",
+      "Token setup & custom parameter structuring",
+      "Project requirement preparation & launch document pack",
+      "Website link/project integration",
+      "Social media management & channel architecture guidance",
+      "Launch preparation & community hype strategy walkthrough",
+      "Advanced customization within project scope",
+      "Extended 30-day client support & issue troubleshooting",
+      "Marketing preparation & initial campaign roadmap",
+      "Project guidance & tokenomics review"
+    ],
+    addOns: [
+      { name: "Full Social Media / Community Setup", price: "+$100" },
+      { name: "New Dedicated Project Website & Basic Hosting", price: "+$100" },
+      { name: "Additional Custom Changes", price: "+$25" }
+    ],
+    notes: [
+      "Project Requirement: 6–7 SOL (blockchain launch requirement, not sent through website)",
+      "Marketing preparation included; advertising budgets separate",
+      "No payment or crypto transfer collected on website"
+    ]
+  },
+
+  pro: {
+    id: "pro",
+    name: "Pro",
+    price: 2750,
+    originalPrice: 3100,
+    discount: 350,
+    solRequirement: "12–13 SOL",
+    badge: "Elite Launchpad",
+    description: "Highest-tier full-scale launch support, priority communication, liquidity strategy, and post-launch guidance.",
+    supportPeriod: "60 Days",
+    includedFeatures: [
+      "Premium meme coin creation assistance & custom structuring",
+      "Premium branding, banners, color palettes & badges",
+      "Professional logo design crafted to high fidelity",
+      "Advanced project preparation & tokenomics documentation",
+      "Website/project link integration & SEO-ready structure",
+      "Social media guidance & community growth manual",
+      "Launch preparation & multi-phase rollout framework",
+      "Liquidity planning assistance & pool depth modeling",
+      "Marketing planning & tailored promotion framework",
+      "Advertising planning & targeted channel selection",
+      "Advanced customization & dedicated review sessions",
+      "Priority client support (60 Days)",
+      "Post-launch guidance & ecosystem scaling advice"
+    ],
+    addOns: [
+      { name: "Full Social Media / Community Setup", price: "+$100" },
+      { name: "New Dedicated Project Website & Basic Hosting", price: "+$100" },
+      { name: "Additional Custom Changes", price: "+$25" }
+    ],
+    notes: [
+      "Project Requirement: 12–13 SOL (blockchain launch requirement, not sent through website)",
+      "Advertising & liquidity are separate direct expenses",
+      "No financial guarantees or exchange approval promises"
+    ]
+  }
+};
