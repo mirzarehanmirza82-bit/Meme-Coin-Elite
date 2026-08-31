@@ -173,7 +173,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                  <span>Token setup (10M - 100B or Custom)</span>
+                  <span>Token setup (10M - 10B)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
@@ -487,10 +487,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
               <button
                 onClick={() => onNavigate("faq")}
-                className="px-6 py-3 rounded-xl bg-[#1A1A26] hover:bg-[#242436] text-amber-300 border border-amber-500/30 font-bold text-xs sm:text-sm transition-all"
+                className="px-6 py-3 rounded-xl bg-[#1A1A26] hover:bg-[#242436] text-amber-300 border border-amber-500/30 font-bold text-xs sm:text-sm transition-all cursor-pointer"
               >
                 Read All FAQs
               </button>
+            </div>
+
+            <div className="pt-3 border-t border-white/10 max-w-lg mx-auto">
+              <p className="text-xs text-amber-300/90 font-medium">
+                {SITE_CONFIG.seriousInquiryNotice}
+              </p>
             </div>
           </div>
         </div>

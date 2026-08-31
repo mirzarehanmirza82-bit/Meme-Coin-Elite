@@ -7,15 +7,38 @@ export const SITE_CONFIG = {
   siteName: "Meme Coin Elite",
   tagline: "MEME COIN CREATION • BRANDING • LAUNCH SUPPORT",
   
-  // Contact Channels
-  whatsapp: "https://wa.me/Rehan100000?text=Hello%20Meme%20Coin%20Elite%2C%20I%20am%20interested%20in%20your%20services.",
+  // WhatsApp Business & Direct Channels
+  whatsapp: "https://wa.me/message/NI5MWSRWGEGKN1",
   telegram: "https://t.me/MirzaRehan6",
   email: "memecoinelite@gmail.com",
 
+  // VIP Community Links & Pricing
+  vipGroup: {
+    whatsapp: "https://chat.whatsapp.com/D1TcCUq8DK70B2oIntKkb3?s=sw&p=a&mlu=0&ilr=4",
+    telegram: "https://t.me/+sC1Wezg3TqNkNzVk",
+    pricing: {
+      monthly: { price: 95, originalPrice: 100, label: "Monthly Access" },
+      yearly: { price: 999, originalPrice: 1140, label: "Yearly Pass", savings: "Save $141" },
+      lifetime: { price: 4499, originalPrice: 6199, label: "Lifetime VIP Access", badge: "Limited Slots / Limited Time Offer" }
+    },
+    joinGuidance: "To join the group, click on the WhatsApp button below. Our representative will guide you on how to join the group after fee payment."
+  },
+
+  // VVIP Community Links & Pricing
+  vvipGroup: {
+    whatsapp: "https://chat.whatsapp.com/KEBolqepYZ8BHW2UihTng5?s=sh&p=a&mlu=0&ilr=4",
+    telegram: "https://t.me/+6IYTH2aqd0A0NGNk",
+    pricing: {
+      monthly: { price: 199, originalPrice: 225, label: "Monthly Access" },
+      yearly: { price: 1995, originalPrice: 2380, label: "Yearly Pass", savings: "Save $385" },
+      lifetime: { price: 6349, originalPrice: 8449, label: "Lifetime VVIP Concierge", badge: "Limited Slots / Limited Time Offer" }
+    },
+    joinGuidance: "To join the group, click on the WhatsApp button below. Our representative will guide you on how to join the group after fee payment."
+  },
+
   // Direct Communication Link Generators
-  getWhatsAppUrl: (text?: string) => {
-    const encoded = encodeURIComponent(text || "Hello Meme Coin Elite, I am interested in your services.");
-    return `https://wa.me/Rehan100000?text=${encoded}`;
+  getWhatsAppUrl: (_text?: string) => {
+    return "https://wa.me/message/NI5MWSRWGEGKN1";
   },
   getTelegramUrl: () => "https://t.me/MirzaRehan6",
   getGmailUrl: (subject: string, body: string) => 
@@ -23,8 +46,9 @@ export const SITE_CONFIG = {
   getMailtoUrl: (subject: string, body: string) =>
     `mailto:memecoinelite@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
 
-  // Response Time Notice
+  // Disclaimers & Notices
   responseNotice: "Please note: There may be a short response delay. We will review your inquiry and contact you within 1–2 business days.",
+  seriousInquiryNotice: "Notice: Serious inquiries only. Please refrain from spam, time-wasting, or unsolicited bargaining. Unserious messages will be disregarded.",
 
   // Business Operational Info
   supportDays: "14 Days",
@@ -61,7 +85,7 @@ export const PACKAGE_CONFIG = {
       "Meme coin creation & smart token configuration",
       "Professional branding & visual styling guide",
       "Custom logo design based on your instructions (No image upload required)",
-      "Token supply setup (10M to 100B or custom)",
+      "Token supply setup (10M, 100M, 1B, or 10B)",
       "Project requirement & launch checklist preparation",
       "Website link & metadata project integration",
       "Social media setup & management guidance (X, Telegram, Discord, TikTok, etc.)",

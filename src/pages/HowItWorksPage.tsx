@@ -40,7 +40,7 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onNavigate }) =>
       description: "Complete our structured Project Requirements form with your token name, symbol, chosen supply tier, and a detailed description of your desired mascot/logo aesthetics (no image upload required).",
       keyPoints: [
         "Define your logo theme, mascot, colors, and typography",
-        "Choose token supply (10M - 100B or custom supply)",
+        "Choose token supply (10M, 100M, 1B, or 10B)",
         "Select optional advertising budget or website integration preferences"
       ]
     },

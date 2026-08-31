@@ -2,5 +2,7 @@
   "name": "Meme Coin Elite",
   "description": "Professional meme coin creation, branding, project preparation and launch support with clear requirements and direct client communication.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

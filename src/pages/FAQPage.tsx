@@ -41,7 +41,7 @@ const FAQ_DATA: FAQItem[] = [
   {
     id: "faq-4",
     question: "Can I choose my token supply?",
-    answer: "Yes. You can select standard token supply benchmarks (10 Million, 100 Million, 1 Billion, 10 Billion, 100 Billion) or enter a custom supply number directly on our requirements form.",
+    answer: "Yes. You can select your desired token supply benchmark: 10 Million (10M), 100 Million (100M), 1 Billion (1B), or 10 Billion (10B) directly on our requirements form.",
     category: "Token Parameters"
   },
   {

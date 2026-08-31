@@ -155,9 +155,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
             </ul>
 
-            <div className="p-2.5 rounded-lg bg-[#14141E] border border-amber-500/10 text-[11px] text-gray-400 mt-3 leading-relaxed">
-              <span className="text-amber-300/90 font-semibold block mb-0.5">No In-App Payment</span>
-              Payment and terms are discussed directly before starting. No SOL transfers are requested through this website.
+            <div className="p-2.5 rounded-lg bg-[#14141E] border border-amber-500/10 text-[11px] text-gray-400 mt-3 leading-relaxed space-y-1">
+              <div>
+                <span className="text-amber-300/90 font-semibold block mb-0.5">No In-App Payment</span>
+                Payment and terms are discussed directly before starting. No SOL transfers are requested through this website.
+              </div>
+              <div className="pt-1 border-t border-white/5 text-[10px] text-amber-300/80 font-medium">
+                {SITE_CONFIG.seriousInquiryNotice}
+              </div>
             </div>
           </div>
 

@@ -30,9 +30,7 @@ const TOTAL_SUPPLY_OPTIONS = [
   "10 Million",
   "100 Million",
   "1 Billion",
-  "10 Billion",
-  "100 Billion",
-  "Custom"
+  "10 Billion"
 ];
 
 const ADVERTISEMENT_OPTIONS = [
@@ -357,7 +355,7 @@ ${formData.additionalRequirements || "None provided"}
             <label className="block text-xs font-bold text-gray-300">
               Total Supply Selection <span className="text-amber-400">*</span>
             </label>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2.5">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {TOTAL_SUPPLY_OPTIONS.map((opt) => {
                 const isSelected = formData.totalSupply === opt;
                 return (
@@ -365,9 +363,9 @@ ${formData.additionalRequirements || "None provided"}
                     key={opt}
                     type="button"
                     onClick={() => setFormData({ ...formData, totalSupply: opt })}
-                    className={`py-2.5 px-3 rounded-xl text-xs font-bold transition-all cursor-pointer border ${
+                    className={`py-3 px-3 rounded-xl text-xs font-bold transition-all cursor-pointer border text-center ${
                       isSelected
-                        ? 'bg-amber-400 text-black border-amber-400 shadow-md shadow-amber-500/20'
+                        ? 'bg-amber-400 text-black border-amber-400 shadow-md shadow-amber-500/20 font-extrabold'
                         : 'bg-[#151522] text-gray-300 border-white/10 hover:border-amber-500/40 hover:text-white'
                     }`}
                   >
@@ -376,18 +374,6 @@ ${formData.additionalRequirements || "None provided"}
                 );
               })}
             </div>
-
-            {formData.totalSupply === "Custom" && (
-              <div className="mt-3 animate-fade-in">
-                <input
-                  type="text"
-                  placeholder="Enter custom token supply (e.g. 777 Million or 420.69 Billion)"
-                  value={formData.customTotalSupply}
-                  onChange={(e) => setFormData({ ...formData, customTotalSupply: e.target.value })}
-                  className="w-full bg-[#151522] border border-amber-400 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 outline-none"
-                />
-              </div>
-            )}
           </div>
         </div>
 
@@ -725,6 +711,12 @@ ${formData.additionalRequirements || "None provided"}
           <p className="text-[11px] text-gray-400 text-center leading-relaxed">
             Clicking <strong className="text-amber-300">ORDER NOW</strong> will prepare your project brief and open direct submission options (Gmail, WhatsApp, Telegram, or Email). No payments or crypto transactions occur on this site.
           </p>
+
+          <div className="pt-3 border-t border-white/10 text-center">
+            <p className="text-xs text-amber-300/90 font-medium">
+              {SITE_CONFIG.seriousInquiryNotice}
+            </p>
+          </div>
 
         </div>
 

@@ -433,9 +433,14 @@ Sent via Meme Coin Elite Official Platform`;
               </button>
             </div>
 
-            <p className="text-[11px] text-gray-400 text-center">
-              Direct founder communication. We reply within 1–2 business days.
-            </p>
+            <div className="space-y-2 pt-1 text-center">
+              <p className="text-[11px] text-gray-400">
+                Direct founder communication. We reply within 1–2 business days.
+              </p>
+              <p className="text-[11px] text-amber-300/90 font-medium">
+                {SITE_CONFIG.seriousInquiryNotice}
+              </p>
+            </div>
           </form>
         </div>
 
