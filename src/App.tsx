@@ -8,6 +8,7 @@ import { LoadingScreen } from './components/LoadingScreen';
 // Pages
 import { HomePage } from './pages/HomePage';
 import { PackagesPage } from './pages/PackagesPage';
+import { ProjectsPage } from './pages/ProjectsPage';
 import { RequirementsPage } from './pages/RequirementsPage';
 import { HowItWorksPage } from './pages/HowItWorksPage';
 import { AboutPage } from './pages/AboutPage';
@@ -33,7 +34,7 @@ export default function App() {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '') as PageRoute;
       const validRoutes: PageRoute[] = [
-        'home', 'packages', 'requirements', 'how-it-works', 'about', 
+        'home', 'packages', 'projects', 'requirements', 'how-it-works', 'about', 
         'contact', 'faq', 'referral', 'vip', 'vvip', 'privacy-policy', 'terms'
       ];
       if (validRoutes.includes(hash)) {
@@ -88,6 +89,7 @@ export default function App() {
       <main className="flex-1 w-full pb-16">
         {currentPage === 'home' && <HomePage onNavigate={handleNavigate} />}
         {currentPage === 'packages' && <PackagesPage onNavigate={handleNavigate} />}
+        {currentPage === 'projects' && <ProjectsPage onNavigate={handleNavigate} />}
         {currentPage === 'requirements' && <RequirementsPage onNavigate={handleNavigate} />}
         {currentPage === 'how-it-works' && <HowItWorksPage onNavigate={handleNavigate} />}
         {currentPage === 'about' && <AboutPage onNavigate={handleNavigate} />}

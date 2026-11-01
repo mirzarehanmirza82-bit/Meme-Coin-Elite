@@ -1,7 +1,8 @@
 import React from 'react';
 import { PageRoute } from '../types';
 import { PACKAGE_CONFIG, SITE_CONFIG } from '../siteConfig';
-import { SpecialOfferBanner } from '../components/SpecialOfferBanner';
+import { PROJECTS_DATA } from '../data/projectsData';
+import { PackageAdvanceNotice } from '../components/PackageAdvanceNotice';
 import { TestimonialTicker } from '../components/TestimonialTicker';
 import { NoticeBanner } from '../components/NoticeBanner';
 import { 
@@ -16,7 +17,11 @@ import {
   MessageSquare, 
   HelpCircle,
   Clock,
-  Coins
+  Coins,
+  TrendingUp,
+  Lock,
+  Eye,
+  BarChart3
 } from 'lucide-react';
 
 interface HomePageProps {
@@ -40,9 +45,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </div>
 
         {/* Main Heading */}
-        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight max-w-5xl mx-auto leading-[1.1]">
-          Build Your Meme Coin Project <br className="hidden sm:inline" />
-          <span className="text-gold-gradient">With Confidence</span>
+        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight max-w-5xl mx-auto leading-[1.15]">
+          Your Vision, Our Expertise: <br className="hidden sm:inline" />
+          <span className="text-gold-gradient">Launch Your Meme Coin Project Profitably</span>
         </h1>
 
         {/* Subheading */}
@@ -91,9 +96,31 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
       </section>
 
-      {/* 2. SPECIAL STARTUP OFFER & WHATSAPP NOTICE */}
+      {/* 2. DIRECT CONSULTATION & INQUIRY NOTICE */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SpecialOfferBanner onNavigate={onNavigate} />
+        <div className="rounded-2xl bg-[#111118]/90 border border-amber-500/25 p-5 sm:p-6 backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-5 shadow-lg">
+          <div className="space-y-1.5 text-center md:text-left">
+            <div className="flex items-center justify-center md:justify-start gap-2">
+              <span className="inline-block w-2 h-2 rounded-full bg-[#25D366] animate-ping"></span>
+              <h4 className="font-heading text-base sm:text-lg font-bold text-white">
+                Want More Information Before Ordering?
+              </h4>
+            </div>
+            <p className="text-xs sm:text-sm text-gray-300 max-w-2xl">
+              If you want to know more about our services, packages, project process, advance fee, or requirements before ordering, contact us first. We will explain the details and answer your questions directly.
+            </p>
+          </div>
+
+          <a
+            href={SITE_CONFIG.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-shrink-0 inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-black font-bold text-xs sm:text-sm shadow-lg shadow-[#25D366]/20 transition-all transform hover:scale-105"
+          >
+            <MessageSquare className="w-4 h-4" />
+            <span>Contact Us on WhatsApp</span>
+          </a>
+        </div>
       </section>
 
       {/* 3. PACKAGES PREVIEW SECTION */}
@@ -126,13 +153,19 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           
           {/* Advanced Package */}
           <div className="rounded-3xl bg-[#101017] border border-amber-500/20 p-6 sm:p-8 flex flex-col justify-between hover:border-amber-500/40 transition-all shadow-xl group">
-            <div className="space-y-6">
+            <div className="space-y-5">
               
+              <PackageAdvanceNotice 
+                compact={true} 
+                packageName={PACKAGE_CONFIG.advanced.name} 
+                advanceFeeAmount={PACKAGE_CONFIG.advanced.advanceFee} 
+              />
+
               <div className="flex items-center justify-between">
                 <span className="text-xs uppercase font-bold tracking-wider text-amber-400/90 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">
                   {PACKAGE_CONFIG.advanced.badge}
                 </span>
-                <span className="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full">
+                <span className="text-sm sm:text-base font-black text-emerald-300 bg-emerald-950/90 border-2 border-emerald-400/60 px-3.5 py-1 rounded-xl shadow-lg shadow-emerald-950/70 tracking-wider uppercase">
                   SAVE ${PACKAGE_CONFIG.advanced.discount}
                 </span>
               </div>
@@ -147,7 +180,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </div>
 
               {/* Price display */}
-              <div className="p-4 rounded-2xl bg-[#151522] border border-white/5 space-y-1">
+              <div className="p-4 rounded-2xl bg-[#151522] border border-white/5 space-y-2">
                 <div className="flex items-baseline gap-2">
                   <span className="text-xs text-gray-500 line-through">
                     ${PACKAGE_CONFIG.advanced.originalPrice}
@@ -155,6 +188,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   <span className="text-3xl font-extrabold text-white">
                     ${PACKAGE_CONFIG.advanced.price}
                   </span>
+                </div>
+                <div className="p-2 rounded-lg bg-amber-500/15 border border-amber-400/40 text-xs text-amber-200 flex items-center justify-between">
+                  <span className="font-bold text-gray-200 text-[11px]">Advance Fee:</span>
+                  <span className="text-xs font-black text-amber-300 underline decoration-amber-400">{PACKAGE_CONFIG.advanced.advanceFee}</span>
                 </div>
                 <div className="text-[11px] text-amber-300/80 font-medium">
                   Project Requirement: {PACKAGE_CONFIG.advanced.solRequirement}
@@ -173,7 +210,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                  <span>Token setup (10M - 10B)</span>
+                  <span>Token setup (10M, 100M, 1B, 10B)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
@@ -181,7 +218,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                  <span>14 Days client support for delivered work</span>
+                  <span>{PACKAGE_CONFIG.advanced.supportPeriod} client support for delivered work</span>
                 </li>
               </ul>
 
@@ -205,13 +242,19 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               {PACKAGE_CONFIG.business.badge}
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-5">
               
+              <PackageAdvanceNotice 
+                compact={true} 
+                packageName={PACKAGE_CONFIG.business.name} 
+                advanceFeeAmount={PACKAGE_CONFIG.business.advanceFee} 
+              />
+
               <div className="flex items-center justify-between pt-2">
                 <span className="text-xs uppercase font-bold tracking-wider text-amber-300">
                   Full Branding & Token Kit
                 </span>
-                <span className="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full">
+                <span className="text-sm sm:text-base font-black text-emerald-300 bg-emerald-950/90 border-2 border-emerald-400/60 px-3.5 py-1 rounded-xl shadow-lg shadow-emerald-950/70 tracking-wider uppercase">
                   SAVE ${PACKAGE_CONFIG.business.discount}
                 </span>
               </div>
@@ -226,7 +269,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </div>
 
               {/* Price display */}
-              <div className="p-4 rounded-2xl bg-[#181826] border border-amber-500/30 space-y-1">
+              <div className="p-4 rounded-2xl bg-[#181826] border border-amber-500/30 space-y-2">
                 <div className="flex items-baseline gap-2">
                   <span className="text-xs text-gray-500 line-through">
                     ${PACKAGE_CONFIG.business.originalPrice}
@@ -234,6 +277,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   <span className="text-3xl font-black text-gold-gradient">
                     ${PACKAGE_CONFIG.business.price}
                   </span>
+                </div>
+                <div className="p-2 rounded-lg bg-amber-500/15 border border-amber-400/40 text-xs text-amber-200 flex items-center justify-between">
+                  <span className="font-bold text-gray-200 text-[11px]">Advance Fee:</span>
+                  <span className="text-xs font-black text-amber-300 underline decoration-amber-400">{PACKAGE_CONFIG.business.advanceFee}</span>
                 </div>
                 <div className="text-[11px] text-amber-200 font-medium">
                   Project Requirement: {PACKAGE_CONFIG.business.solRequirement}
@@ -264,7 +311,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                  <span>30 Days client support & troubleshooting</span>
+                  <span>{PACKAGE_CONFIG.business.supportPeriod} client support & troubleshooting</span>
                 </li>
               </ul>
 
@@ -283,13 +330,19 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
           {/* Pro Package */}
           <div className="rounded-3xl bg-[#101017] border border-amber-500/20 p-6 sm:p-8 flex flex-col justify-between hover:border-amber-500/40 transition-all shadow-xl group">
-            <div className="space-y-6">
+            <div className="space-y-5">
               
+              <PackageAdvanceNotice 
+                compact={true} 
+                packageName={PACKAGE_CONFIG.pro.name} 
+                advanceFeeAmount={PACKAGE_CONFIG.pro.advanceFee} 
+              />
+
               <div className="flex items-center justify-between">
                 <span className="text-xs uppercase font-bold tracking-wider text-amber-400/90 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">
                   {PACKAGE_CONFIG.pro.badge}
                 </span>
-                <span className="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full">
+                <span className="text-sm sm:text-base font-black text-emerald-300 bg-emerald-950/90 border-2 border-emerald-400/60 px-3.5 py-1 rounded-xl shadow-lg shadow-emerald-950/70 tracking-wider uppercase">
                   SAVE ${PACKAGE_CONFIG.pro.discount}
                 </span>
               </div>
@@ -304,7 +357,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </div>
 
               {/* Price display */}
-              <div className="p-4 rounded-2xl bg-[#151522] border border-white/5 space-y-1">
+              <div className="p-4 rounded-2xl bg-[#151522] border border-white/5 space-y-2">
                 <div className="flex items-baseline gap-2">
                   <span className="text-xs text-gray-500 line-through">
                     ${PACKAGE_CONFIG.pro.originalPrice}
@@ -312,6 +365,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   <span className="text-3xl font-extrabold text-white">
                     ${PACKAGE_CONFIG.pro.price}
                   </span>
+                </div>
+                <div className="p-2 rounded-lg bg-amber-500/15 border border-amber-400/40 text-xs text-amber-200 flex items-center justify-between">
+                  <span className="font-bold text-gray-200 text-[11px]">Advance Fee:</span>
+                  <span className="text-xs font-black text-amber-300 underline decoration-amber-400">{PACKAGE_CONFIG.pro.advanceFee}</span>
                 </div>
                 <div className="text-[11px] text-amber-300/80 font-medium">
                   Project Requirement: {PACKAGE_CONFIG.pro.solRequirement}
@@ -338,7 +395,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                  <span>Priority 60-day support & post-launch guidance</span>
+                  <span>{PACKAGE_CONFIG.pro.supportPeriod} priority support & post-launch guidance</span>
                 </li>
               </ul>
 
@@ -357,8 +414,119 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
         </div>
 
+        {/* Support Period Policy Banner */}
+        <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#171422] via-[#1A1629] to-[#171422] border-2 border-amber-500/30 text-xs sm:text-sm text-gray-200 leading-relaxed shadow-lg">
+          <div className="flex items-start gap-3">
+            <Clock className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+            <div>
+              <strong className="text-amber-300 font-extrabold uppercase tracking-wide block mb-0.5">
+                Package Support Periods & Operational Scope
+              </strong>
+              <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                Included package support periods (e.g. 14 Days for Advanced, 21 Days for Business, 30 Days for Pro) cover operational guidance and standard troubleshooting for delivered deliverables, and do not constitute unlimited revision labor.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Clear Payment Explanation Notice */}
         <NoticeBanner type="payment" />
+
+      </section>
+
+      {/* 3.5 CLIENT PROJECTS SHOWCASE & DEX ANALYTICS PREVIEW */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/5 pb-6">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider mb-2">
+              <BarChart3 className="w-3.5 h-3.5 text-amber-400" />
+              <span>Proven Track Record</span>
+            </div>
+            <h2 className="font-heading text-3xl sm:text-4xl font-extrabold text-white">
+              Client Project Launches & DEX Analytics
+            </h2>
+            <p className="text-sm text-gray-400 mt-1 max-w-xl">
+              Authentic on-chain trading performance from projects launched via our technical pipeline.
+            </p>
+          </div>
+
+          <button
+            onClick={() => onNavigate("projects")}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 hover:text-white text-xs sm:text-sm font-bold transition-all cursor-pointer"
+          >
+            <span>View Full Project Gallery</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
+
+        {/* Client Privacy Notice Pill */}
+        <div className="p-3.5 rounded-xl bg-[#12121C] border border-amber-500/20 text-xs text-gray-300 flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-amber-400 flex-shrink-0" />
+            <span>
+              <strong className="text-amber-300">Client Confidentiality: </strong>
+              Detailed contract addresses and creator wallets are withheld to safeguard client privacy and proprietary strategies.
+            </span>
+          </div>
+          <button
+            onClick={() => onNavigate("projects")}
+            className="hidden sm:inline-flex text-xs text-amber-400 font-bold hover:underline whitespace-nowrap cursor-pointer"
+          >
+            Learn More →
+          </button>
+        </div>
+
+        {/* 4 Project Preview Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {PROJECTS_DATA.map((project) => (
+            <div
+              key={project.id}
+              onClick={() => onNavigate("projects")}
+              className="rounded-2xl bg-[#0D0D14] border border-amber-500/20 hover:border-amber-500/50 p-4 transition-all duration-300 cursor-pointer flex flex-col justify-between group shadow-lg hover:shadow-amber-500/10"
+            >
+              <div className="space-y-3">
+                {/* Image snippet */}
+                <div className="relative rounded-xl overflow-hidden border border-white/5 bg-black/50 aspect-video flex items-center justify-center">
+                  <img
+                    src={project.image}
+                    alt={project.codeName}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-2 right-2 px-2 py-0.5 rounded-md bg-black/80 text-[10px] font-bold text-emerald-400 border border-emerald-500/40">
+                    24H: {project.stats.peakGain24h}
+                  </div>
+                </div>
+
+                <div>
+                  <div className="text-[10px] uppercase font-bold text-amber-400 tracking-wider">
+                    {project.categoryLabel}
+                  </div>
+                  <h4 className="font-heading text-base font-bold text-white group-hover:text-amber-300 transition-colors">
+                    {project.codeName}
+                  </h4>
+                </div>
+
+                <div className="grid grid-cols-2 gap-2 text-[11px] pt-1 border-t border-white/5">
+                  <div className="p-2 rounded-lg bg-[#14141E]">
+                    <span className="text-gray-400 block text-[9px] uppercase">Peak Mkt Cap</span>
+                    <span className="font-bold text-white">{project.stats.marketCap}</span>
+                  </div>
+                  <div className="p-2 rounded-lg bg-[#14141E]">
+                    <span className="text-gray-400 block text-[9px] uppercase">24H Volume</span>
+                    <span className="font-bold text-amber-300">{project.stats.volume24h}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-3 mt-3 border-t border-white/5 flex items-center justify-between text-xs font-semibold text-gray-400 group-hover:text-amber-300">
+                <span>View Full DEX Metrics</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          ))}
+        </div>
 
       </section>
 

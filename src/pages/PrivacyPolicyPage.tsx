@@ -44,7 +44,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
             <span>Overview & Commitment</span>
           </h3>
           <p>
-            Meme Coin Elite respects your privacy and is committed to protecting the information you share with us. This Privacy Policy explains what details we collect when you browse our website, submit a project brief, or communicate with our team, and how that information is handled.
+            Meme Coin Elite operates under our commitment: <strong className="text-white">"Your Vision, Our Expertise: Launch Your Meme Coin Project Profitably."</strong> We respect your privacy and are committed to protecting the information you share with us. This Privacy Policy explains what details we collect when you browse our website, submit a project brief, or communicate with our team, and how that information is handled.
           </p>
         </section>
 
@@ -59,20 +59,26 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
           </p>
           <ul className="list-disc pl-5 space-y-1.5 text-gray-300">
             <li>Contact details such as your Name, Email address, WhatsApp number, and Telegram username.</li>
-            <li>Project specifics including Token Name, Symbol/Ticker, chosen supply parameters, and logo design descriptions.</li>
+            <li>Project specifics including Token Name, Symbol/Ticker, chosen supply parameters (10M, 100M, 1B, 10B), and logo design descriptions.</li>
             <li>Public social media handles or website URLs you wish to associate with your token launch.</li>
             <li>Communication records and notes regarding your project preferences and requirements.</li>
           </ul>
         </section>
 
-        {/* Section 3: Absolute Security - What We NEVER Collect */}
+        {/* Section 3: Absolute Security - What We NEVER Collect & Advance Fee Terms */}
         <section className="p-5 rounded-2xl bg-[#15131E] border border-amber-500/30 space-y-3">
           <div className="flex items-center gap-2 text-amber-300 font-bold text-sm">
             <Lock className="w-4 h-4 text-amber-400" />
-            <span>Strict Financial Privacy: What We NEVER Collect</span>
+            <span>Strict Financial Privacy & Advance Fee Terms</span>
           </div>
           <p className="text-xs text-gray-300 leading-relaxed">
-            Meme Coin Elite <strong className="text-white">does not collect, store, or process</strong> credit card details, bank account numbers, cryptocurrency private keys, seed phrases, or automated wallet authorizations on this website. All final project payments and agreements occur outside the website through mutually agreed direct channels.
+            Meme Coin Elite <strong className="text-white">does not collect, store, or process</strong> credit card details, bank account numbers, cryptocurrency private keys, seed phrases, or automated wallet authorizations on this website. All payments occur outside the website through mutually agreed direct channels.
+          </p>
+          <p className="text-xs text-gray-300 leading-relaxed">
+            <strong className="text-amber-300">Advance SOL Fee Policy:</strong> An advance fee is required based on the requirements of the individual package (Advanced Package: 5–7 SOL, Business Package: 6–7 SOL, Pro Package: 12–13 SOL) and is needed up front as part of the package terms to proceed with the meme coin project. Work begins only after the advance fee is received. We will then confirm your coin specifications, gather requirements, and proceed with creation and listing as instructed. Remaining balance is due upon project completion, based on your chosen package.
+          </p>
+          <p className="text-xs text-gray-400 leading-relaxed">
+            Note on Promotions: Standard published package rates now apply across all tiers, and previous limited introductory startup offers have concluded. Direct raw email addresses are omitted from display to maintain cybersecurity and privacy; founders connect via encrypted direct action buttons.
           </p>
         </section>
 
@@ -101,14 +107,36 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
           </p>
         </section>
 
+        {/* Section 5: Client Project Showcase & Confidentiality Policy */}
+        <section className="p-5 rounded-2xl bg-[#12121C] border border-amber-500/20 space-y-3">
+          <h3 className="font-heading text-lg font-bold text-white flex items-center gap-2">
+            <span className="text-amber-400">5.</span>
+            <span>Client Project Showcase & Track Record Confidentiality</span>
+          </h3>
+          <p className="text-xs text-gray-300 leading-relaxed">
+            Case studies and on-chain metrics presented in our Project Gallery (e.g., peak 24H gains, traded volumes, liquidity depth, and transaction activity) showcase verified DEX performance. To safeguard client security and uphold strict Non-Disclosure Agreements (NDAs), we strictly redact and withhold all identifying project parameters, including smart contract addresses (CAs), deployer wallets, private social admin contacts, and proprietary trading configurations. Full confidential project details are never publicly revealed on this website.
+          </p>
+        </section>
+
         {/* Section 6: Contact Us for Privacy Inquiries */}
         <section className="pt-4 border-t border-white/10 space-y-3">
           <h3 className="font-heading text-lg font-bold text-white">
-            5. Contact Us Regarding Privacy
+            6. Contact Us Regarding Privacy
           </h3>
           <p className="text-xs text-gray-400">
-            If you have questions about this policy or wish to request the deletion of your submitted brief details, please contact us directly at <a href={`mailto:${SITE_CONFIG.email}`} className="text-amber-300 underline font-medium">{SITE_CONFIG.email}</a>.
+            If you have questions about this policy or wish to request the deletion of your submitted brief details, please contact us directly using the button below:
           </p>
+          <div className="pt-1">
+            <a
+              href={SITE_CONFIG.getGmailUrl("Privacy Inquiry", "Hello Meme Coin Elite,\n\nI have a question regarding my privacy and project data.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-black font-extrabold text-xs shadow-md transition-all cursor-pointer"
+            >
+              <Mail className="w-4 h-4" />
+              <span>Contact Us via Email</span>
+            </a>
+          </div>
         </section>
 
       </div>

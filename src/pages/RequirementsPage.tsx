@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { PageRoute, RequirementsFormData } from '../types';
 import { PACKAGE_CONFIG, SITE_CONFIG } from '../siteConfig';
 import { NoticeBanner } from '../components/NoticeBanner';
+import { PackageAdvanceNotice } from '../components/PackageAdvanceNotice';
 import { SubmissionModal } from '../components/SubmissionModal';
 import { 
   FileText, 
@@ -132,8 +133,15 @@ CLIENT INFORMATION:
 PACKAGE DETAILS:
 - Selected Package: ${selectedPkg.name} Package
 - Package Reference Price: $${selectedPkg.price} (Original: $${selectedPkg.originalPrice}, Discount: Save $${selectedPkg.discount})
+- Advance Fee Required: ${selectedPkg.advanceFee}
+- Support Duration: ${selectedPkg.supportPeriod}
 - Blockchain SOL Project Requirement: ${selectedPkg.solRequirement}
 - Estimated Total Add-On Value: $${calculateTotalEstimate()}
+
+ADVANCE FEE & TERMS CONFIRMATION:
+- Advance Fee Terms: An advance fee is required based on the requirements of the individual package (${selectedPkg.advanceFee} for ${selectedPkg.name} Package) and is needed up front as part of the package terms to proceed with the meme coin project.
+- Terms: Work begins only after the advance fee is received. We will then confirm your coin specifications, gather requirements, and proceed with creation and listing as instructed. Remaining balance is due upon project completion, based on your chosen package.
+- Support Policy: Included package support periods (e.g. 14 Days for Advanced, 21 Days for Business, 30 Days for Pro) cover operational guidance and standard troubleshooting for delivered deliverables, and do not constitute unlimited revision labor.
 
 TOKEN SPECIFICATIONS:
 - Token Name: ${formData.tokenName}
@@ -282,8 +290,13 @@ ${formData.additionalRequirements || "None provided"}
         <div className="space-y-4">
           <h3 className="font-heading text-lg sm:text-xl font-bold text-white flex items-center gap-2 border-b border-white/10 pb-3">
             <span className="w-6 h-6 rounded-full bg-amber-500/20 text-amber-300 text-xs flex items-center justify-center font-bold">2</span>
-            <span>Select Service Package</span>
+            <span>Select Service Package & Advance Fee Terms</span>
           </h3>
+
+          <PackageAdvanceNotice 
+            packageName={selectedPkg.name} 
+            advanceFeeAmount={selectedPkg.advanceFee} 
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {(["advanced", "business", "pro"] as const).map((pkgKey) => {
@@ -301,16 +314,30 @@ ${formData.additionalRequirements || "None provided"}
                 >
                   <div className="flex items-center justify-between">
                     <span className="font-heading font-bold text-base text-white">{pkg.name}</span>
-                    <span className="text-xs font-extrabold text-amber-300">${pkg.price}</span>
+                    <span className="text-xs font-black text-emerald-300 bg-emerald-950/80 border border-emerald-400/50 px-2.5 py-1 rounded-lg uppercase tracking-wider">
+                      SAVE ${pkg.discount}
+                    </span>
                   </div>
-                  <div className="text-[11px] text-gray-400 mt-1 line-through">${pkg.originalPrice}</div>
-                  <div className="text-xs text-amber-300/90 font-medium mt-2">
-                    SOL Req: {pkg.solRequirement}
+                  <div className="flex items-baseline gap-2 mt-2">
+                    <span className="text-lg font-black text-amber-300">${pkg.price}</span>
+                    <span className="text-xs text-gray-500 line-through">${pkg.originalPrice}</span>
+                  </div>
+                  <div className="mt-3 pt-2.5 border-t border-white/10 space-y-1">
+                    <div className="text-xs font-extrabold text-amber-300">
+                      Advance Fee: {pkg.advanceFee}
+                    </div>
+                    <div className="text-[11px] text-gray-300">
+                      Support: {pkg.supportPeriod}
+                    </div>
                   </div>
                 </div>
               );
             })}
           </div>
+
+          <p className="text-[11px] text-gray-400 leading-relaxed italic">
+            * Note: Included package support periods (e.g. 14 Days for Advanced, 21 Days for Business, 30 Days for Pro) cover operational guidance and standard troubleshooting for delivered deliverables, and do not constitute unlimited revision labor.
+          </p>
         </div>
 
         {/* SECTION 3: Token Parameters */}

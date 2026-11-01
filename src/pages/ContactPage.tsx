@@ -43,7 +43,6 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
     message: ""
   });
 
-  const [copiedEmail, setCopiedEmail] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [preparedSubject, setPreparedSubject] = useState("");
   const [preparedBody, setPreparedBody] = useState("");
@@ -97,12 +96,6 @@ Sent via Meme Coin Elite Official Platform`;
     } catch {
       // Handled via modal
     }
-  };
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(SITE_CONFIG.email);
-    setCopiedEmail(true);
-    setTimeout(() => setCopiedEmail(false), 3000);
   };
 
   return (
@@ -202,45 +195,32 @@ Sent via Meme Coin Elite Official Platform`;
             </div>
             <div>
               <h3 className="font-heading text-xl font-bold text-white">
-                Email
+                Email Consultation
               </h3>
-              <p className="text-xs text-amber-300/90 font-mono mt-0.5 break-all">
-                {SITE_CONFIG.email}
-              </p>
               <p className="text-xs text-gray-400 mt-1 leading-relaxed">
-                Send comprehensive specifications, requirements lists, or partnership inquiries.
+                Send comprehensive specifications, requirements lists, or partnership inquiries directly to our team.
               </p>
             </div>
           </div>
 
-          <div className="pt-6 mt-6 border-t border-white/5 space-y-2">
+          <div className="pt-6 mt-6 border-t border-white/5 space-y-2.5">
             <a
               href={SITE_CONFIG.getGmailUrl("Meme Coin Elite Inquiry", "Hello Meme Coin Elite team,\n\nI would like to discuss a project with you.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-2.5 px-3 rounded-xl bg-red-600/20 hover:bg-red-600/30 border border-red-500/40 text-red-300 hover:text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+              className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-black font-extrabold text-xs flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20 transition-all cursor-pointer"
             >
-              <Mail className="w-3.5 h-3.5" />
-              <span>Open in Gmail</span>
+              <Mail className="w-4 h-4" />
+              <span>Contact Us via Email</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </a>
 
-            <div className="flex items-center gap-2">
-              <a
-                href={SITE_CONFIG.getMailtoUrl("Meme Coin Elite Inquiry", "Hello Meme Coin Elite team,\n\nI would like to inquire about your services.")}
-                className="flex-1 py-2 px-3 rounded-xl bg-[#1C1C2C] hover:bg-amber-500 hover:text-black text-amber-300 border border-amber-500/30 font-semibold text-[11px] flex items-center justify-center gap-1 transition-all"
-              >
-                <span>Mail App</span>
-              </a>
-
-              <button
-                type="button"
-                onClick={handleCopyEmail}
-                className="flex-1 py-2 px-3 rounded-xl bg-[#1C1C2C] hover:bg-[#28283E] text-gray-300 border border-white/10 font-semibold text-[11px] flex items-center justify-center gap-1 transition-all cursor-pointer"
-              >
-                {copiedEmail ? <Check className="w-3 h-3 text-green-400" /> : <Copy className="w-3 h-3" />}
-                <span>{copiedEmail ? "Copied!" : "Copy Email"}</span>
-              </button>
-            </div>
+            <a
+              href={SITE_CONFIG.getMailtoUrl("Meme Coin Elite Inquiry", "Hello Meme Coin Elite team,\n\nI would like to inquire about your services.")}
+              className="w-full py-2.5 px-3 rounded-xl bg-[#1C1C2C] hover:bg-[#252538] text-amber-300 border border-amber-500/30 font-semibold text-xs flex items-center justify-center gap-1.5 transition-all text-center"
+            >
+              <span>Launch Default Mail App</span>
+            </a>
           </div>
         </div>
 

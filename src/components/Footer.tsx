@@ -57,9 +57,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#14141E] hover:bg-[#1E1E2D] border border-amber-500/20 text-xs font-semibold text-gray-200 hover:text-amber-300 transition-colors"
+                title="Click to contact us by email"
               >
                 <Mail className="w-3.5 h-3.5 text-amber-400" />
-                <span>{SITE_CONFIG.email}</span>
+                <span>Contact Us via Email</span>
               </a>
             </div>
 
@@ -83,6 +84,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <li>
                 <button onClick={() => handleNav("packages")} className="hover:text-amber-300 transition-colors">
                   Packages & Pricing
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav("projects")} className="hover:text-amber-300 transition-colors flex items-center gap-1.5">
+                  <span>Projects Gallery</span>
+                  <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/30">Proof</span>
                 </button>
               </li>
               <li>

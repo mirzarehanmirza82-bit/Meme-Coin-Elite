@@ -200,19 +200,20 @@ export const SubmissionModal: React.FC<SubmissionModalProps> = ({
         <div className="p-4 rounded-2xl bg-[#11111A] border border-white/10 space-y-3">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="text-xs">
-              <span className="text-gray-400 block text-[11px]">Official Email Address:</span>
-              <span className="text-white font-mono font-bold">{recipientEmail}</span>
+              <span className="text-gray-400 block text-[11px]">Direct Support Channel:</span>
+              <span className="text-amber-300 font-bold">Direct Email Submission</span>
             </div>
 
             <div className="flex items-center gap-2 w-full sm:w-auto">
-              <button
-                type="button"
-                onClick={handleCopyEmail}
-                className="flex-1 sm:flex-initial px-3 py-2 rounded-xl bg-[#1A1A26] hover:bg-[#242436] border border-white/10 text-xs font-semibold text-gray-200 hover:text-white flex items-center justify-center gap-1.5 cursor-pointer transition-colors"
+              <a
+                href={SITE_CONFIG.getGmailUrl(subject, body)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 sm:flex-initial px-3.5 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-black text-xs font-extrabold flex items-center justify-center gap-1.5 cursor-pointer transition-colors shadow-md"
               >
-                {copiedEmail ? <Check className="w-3.5 h-3.5 text-green-400" /> : <Copy className="w-3.5 h-3.5" />}
-                <span>{copiedEmail ? "Email Copied!" : "Copy Email"}</span>
-              </button>
+                <Mail className="w-3.5 h-3.5" />
+                <span>Contact Us via Email</span>
+              </a>
 
               <button
                 type="button"

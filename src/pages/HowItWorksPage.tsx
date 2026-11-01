@@ -57,24 +57,24 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onNavigate }) =>
     },
     {
       stepNumber: "04",
-      title: "Confirm Scope & Payment Terms",
+      title: "Confirm Scope & Advance Fee Terms",
       icon: <CheckCircle2 className="w-6 h-6 text-amber-400" />,
-      description: "We mutually finalize the project scope, confirm all deliverables, and agree on direct payment terms before any development begins. No payment or crypto transfer is processed through this website.",
+      description: "We mutually finalize the project scope, confirm coin specifications, and receive the package-specific advance fee (Advanced: 5–7 SOL, Business: 6–7 SOL, Pro: 12–13 SOL) needed up front to proceed with the meme coin project. Remaining balance is due upon project completion.",
       keyPoints: [
-        "Clear itemized project agreement",
-        "Mutually agreed payment methods and schedules",
-        "Zero automated checkout or mystery fees"
+        "Package-specific advance fee needed up front",
+        "Work begins only after advance fee is received",
+        "Remaining balance due upon project completion"
       ]
     },
     {
       stepNumber: "05",
       title: "Project Creation & Delivery",
       icon: <Rocket className="w-6 h-6 text-amber-400" />,
-      description: "Our team executes your custom logo, token configuration, branding assets, and launch checklist. You receive everything organized for your official deployment with included support.",
+      description: "Our team executes your custom logo, token configuration, branding assets, and launch checklist. You receive everything organized for your official deployment with included operational support (14 Days for Advanced, 21 Days for Business, 30 Days for Pro).",
       keyPoints: [
         "High-fidelity branding kit and logo files delivered",
         "Complete smart token configuration & metadata assets",
-        "Dedicated post-delivery support period for your package"
+        "Included support for operational guidance and troubleshooting"
       ]
     }
   ];

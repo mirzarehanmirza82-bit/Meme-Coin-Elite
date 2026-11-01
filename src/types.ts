@@ -1,6 +1,7 @@
 export type PageRoute = 
   | "home"
   | "packages"
+  | "projects"
   | "requirements"
   | "how-it-works"
   | "about"
@@ -19,6 +20,7 @@ export interface PackageData {
   originalPrice: number;
   discount: number;
   solRequirement: string;
+  advanceFee: string;
   badge?: string;
   description: string;
   supportPeriod: string;
@@ -82,3 +84,39 @@ export interface FAQItem {
   category?: string;
   highlight?: boolean;
 }
+
+export interface ProjectItem {
+  id: string;
+  codeName: string;
+  tagline: string;
+  image: string;
+  category: "all" | "mega-gainer" | "high-volume" | "breakout-midcap";
+  categoryLabel: string;
+  categories: string[];
+  chain: string;
+  dex: string;
+  stats: {
+    peakGain24h: string;
+    gainPercentage: number;
+    marketCap: string;
+    fdv: string;
+    volume24h: string;
+    liquidity: string;
+    isLiquidityLocked: boolean;
+    priceUsd: string;
+    priceSol: string;
+    transactions: string;
+    buys: string;
+    sells: string;
+    buyVolume: string;
+    sellVolume: string;
+    traders: string;
+    buyers: string;
+    sellers: string;
+  };
+  channels: string[];
+  summary: string;
+  highlights: string[];
+  privacyNotice: string;
+}
+

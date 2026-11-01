@@ -46,18 +46,46 @@ export const TermsPage: React.FC<TermsPageProps> = ({ onNavigate }) => {
             <span>Nature of Services</span>
           </h3>
           <p>
-            Meme Coin Elite provides digital design, branding, project preparation, and launch coordination services for meme coin initiatives. We operate as an independent creative and technical service provider assisting founders with asset structuring and setup guidance.
+            Operating under our core mission: <strong className="text-white">"Your Vision, Our Expertise: Launch Your Meme Coin Project Profitably,"</strong> Meme Coin Elite provides digital design, branding, project preparation, and launch coordination services for meme coin initiatives. We operate as an independent creative and technical service provider assisting founders with asset structuring and setup guidance.
           </p>
         </section>
 
-        {/* Section 2: Reference Pricing & Payment Confirmation */}
+        {/* Section 2: Reference Pricing, Advance Fee & Payment Agreement */}
         <section className="space-y-3">
           <h3 className="font-heading text-lg font-bold text-white flex items-center gap-2">
             <span className="text-amber-400">2.</span>
-            <span>Reference Pricing & Payment Agreement</span>
+            <span>Reference Pricing, Advance SOL Fee & Payment Terms</span>
           </h3>
           <p>
-            The package prices displayed on this website are reference rates for service preparation. <strong className="text-white">No payment, checkout transaction, or cryptocurrency transfer is executed through this website.</strong> Final project deliverables, total cost, payment methods, and schedules must be explicitly agreed upon in writing between the client and Meme Coin Elite before any work commences.
+            The package prices displayed on this website are reference rates for service preparation. <strong className="text-white">No payment, checkout transaction, or cryptocurrency transfer is executed directly through this website.</strong>
+          </p>
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#161320] border border-amber-500/30 text-xs sm:text-sm text-gray-200 space-y-3">
+            <strong className="text-amber-300 font-bold block text-sm uppercase tracking-wide">
+              Advance Fee & Project Initiation Terms:
+            </strong>
+            <p>
+              An advance fee is required based on the requirements of the individual package and is needed up front as part of the package terms to proceed with the meme coin project.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 py-1 text-xs">
+              <div className="p-2.5 rounded-xl bg-[#0E0E17] border border-amber-500/30">
+                <span className="text-gray-400 block font-bold">Advanced Package</span>
+                <span className="text-amber-300 font-extrabold text-sm">5–7 SOL Advance</span>
+              </div>
+              <div className="p-2.5 rounded-xl bg-[#0E0E17] border border-amber-500/30">
+                <span className="text-gray-400 block font-bold">Business Package</span>
+                <span className="text-amber-300 font-extrabold text-sm">6–7 SOL Advance</span>
+              </div>
+              <div className="p-2.5 rounded-xl bg-[#0E0E17] border border-amber-500/30">
+                <span className="text-gray-400 block font-bold">Pro Package</span>
+                <span className="text-amber-300 font-extrabold text-sm">12–13 SOL Advance</span>
+              </div>
+            </div>
+            <p className="text-amber-200/90 font-medium pt-2 border-t border-amber-500/20 leading-relaxed">
+              <strong>Execution Terms:</strong> Work begins only after the advance fee is received. We will then confirm your coin specifications, gather requirements, and proceed with creation and listing as instructed. Remaining balance is due upon project completion, based on your chosen package.
+            </p>
+          </div>
+          <p className="text-xs text-gray-400">
+            All services follow standard published package rates; previous introductory startup offers have concluded. Inquiries and correspondence are handled via direct interactive contact buttons (WhatsApp, Telegram, and Email redirection) rather than raw public email display to protect communication integrity.
           </p>
         </section>
 

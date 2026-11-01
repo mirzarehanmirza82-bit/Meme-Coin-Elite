@@ -26,15 +26,41 @@ const FAQ_DATA: FAQItem[] = [
     category: "Getting Started"
   },
   {
+    id: "faq-advance-fee",
+    question: "What is the advance SOL fee requirement and work process?",
+    answer: "An advance fee is required based on the requirements of the individual package (Advanced Package: 5–7 SOL, Business Package: 6–7 SOL, Pro Package: 12–13 SOL) and is needed up front as part of the package terms to proceed with the meme coin project. Work begins only after the advance fee is received. We will then confirm your coin specifications, gather requirements, and proceed with creation and listing as instructed. Remaining balance is due upon project completion, based on your chosen package.",
+    category: "Payment & Terms",
+    highlight: true
+  },
+  {
+    id: "faq-headline-mission",
+    question: "What is Meme Coin Elite's core mission?",
+    answer: "Our guiding headline and core mission is 'Your Vision, Our Expertise: Launch Your Meme Coin Project Profitably'. We help founders navigate every step of meme coin setup, branding, parameter structuring, and listing preparation with complete transparency.",
+    category: "About Our Services"
+  },
+  {
+    id: "faq-offer-contact",
+    question: "Are there any special startup offers, and where is the email address?",
+    answer: "Previous introductory startup offers (such as the 2-client promo) have concluded, and our transparent standard package rates now apply. To prevent spam and maintain security, we do not visibly display raw email text on the page; instead, founders can click our interactive 'Contact Us via Email' or chat redirection buttons to connect with us directly.",
+    category: "Pricing & Contact"
+  },
+  {
+    id: "faq-projects-privacy",
+    question: "Can I view past project results, and why are contract addresses hidden?",
+    answer: "Yes, you can browse verified DexScreener case studies in our dedicated Projects Gallery, showing real trading volumes, liquidity locks, and peak gains (+6,344%, +775%, etc.). Deeper confidential details such as contract addresses (CA) and creator wallet IDs are strictly withheld to honor non-disclosure agreements and protect our clients' privacy and trading strategies.",
+    category: "Projects & Proof",
+    highlight: true
+  },
+  {
     id: "faq-2",
     question: "How much SOL is required for my project?",
-    answer: "The required SOL depends on the package selected: Advanced requires 5.7 SOL, Business requires 6–7 SOL, and Pro requires 12–13 SOL. This SOL amount represents the blockchain launch requirements (such as pool initialization and token creation fees) and is managed directly by the founder.",
+    answer: "The required SOL includes the blockchain launch/pool requirements (5.7 SOL for Advanced, 6–7 SOL for Business, and 12–13 SOL for Pro). Additionally, an advance fee is required based on individual package terms (Advanced Package: 5–7 SOL, Business Package: 6–7 SOL, Pro Package: 12–13 SOL) and is needed up front to proceed with the project.",
     category: "Blockchain & SOL"
   },
   {
     id: "faq-3",
     question: "Is SOL payment made through the website?",
-    answer: "No. The website does not collect SOL or any other payment. We do not provide wallet connections, QR codes, or deposit addresses. Project requirements, deliverables, and payment terms are discussed and agreed upon directly between the client and our team before work begins.",
+    answer: "No. The website does not collect SOL or any other payment. We do not provide automated wallet connections or deposit addresses. All project agreements, package-specific advance fees (5–7 SOL for Advanced, 6–7 SOL for Business, 12–13 SOL for Pro), and remaining balances are handled directly between client and team. Work begins only after the advance fee is received.",
     category: "Payment & Security",
     highlight: true
   },
@@ -94,8 +120,8 @@ const FAQ_DATA: FAQItem[] = [
   },
   {
     id: "faq-13",
-    question: "Can I change the project after completion?",
-    answer: "Important project requirements and requested changes must be provided before final completion. Once the project has been finalized and delivered, major structural modifications or new feature requests may require additional development charges.",
+    question: "Can I change the project after completion and what does package support cover?",
+    answer: "Important project requirements and requested changes must be provided before final completion. Once the project has been finalized and delivered, major structural modifications or new feature requests may require additional development charges. Included package support periods (e.g. 14 Days for Advanced, 21 Days for Business, 30 Days for Pro) cover operational guidance and standard troubleshooting for delivered deliverables, and do not constitute unlimited revision labor.",
     category: "Revisions & Support",
     highlight: true
   }
@@ -127,7 +153,7 @@ export const FAQPage: React.FC<FAQPageProps> = ({ onNavigate }) => {
           Frequently Asked <span className="text-gold-gradient">Questions</span>
         </h1>
         <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-          Everything you need to know about our services, package deliverables, requirements, and operating terms.
+          Your Vision, Our Expertise: Launch Your Meme Coin Project Profitably. Clear answers regarding our service tiers, advance SOL fee requirements, token parameters, and operating terms.
         </p>
       </div>
 

@@ -81,14 +81,33 @@ export const NoticeBanner: React.FC<NoticeBannerProps> = ({ type, className = ""
 
   if (type === "sol") {
     return (
-      <div className={`p-3.5 sm:p-4 rounded-xl bg-[#13131D] border border-amber-500/20 text-xs text-gray-300 leading-relaxed ${className}`}>
-        <div className="flex items-start gap-2.5">
-          <AlertCircle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-          <div>
-            <strong className="text-amber-200 block mb-0.5">Blockchain Project Requirement (SOL)</strong>
-            <span>
-              This SOL amount is part of the project's blockchain/launch requirement (such as pool initialization and token creation fees). It is <strong className="text-white">NOT a payment</strong> that you need to send through this website. Final payment and project arrangements will be discussed directly with you.
-            </span>
+      <div className={`p-4 sm:p-5 rounded-2xl bg-[#171422] border-2 border-amber-400/60 text-xs sm:text-sm text-gray-200 leading-relaxed shadow-lg ${className}`}>
+        <div className="flex items-start gap-3">
+          <AlertCircle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+          <div className="space-y-2">
+            <strong className="text-amber-300 font-black text-sm block uppercase tracking-wide">
+              Advance Fee & Project Terms Required Up Front
+            </strong>
+            <p className="text-gray-100 font-medium">
+              An advance fee is required based on the requirements of the individual package and is needed up front as part of the package terms to proceed with the meme coin project:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-1">
+              <div className="p-2 rounded-lg bg-[#0F0F18] border border-amber-500/30 text-center">
+                <span className="text-[11px] text-gray-400 block font-bold">Advanced Package</span>
+                <span className="text-xs font-black text-amber-300">5–7 SOL Advance</span>
+              </div>
+              <div className="p-2 rounded-lg bg-[#0F0F18] border border-amber-500/30 text-center">
+                <span className="text-[11px] text-gray-400 block font-bold">Business Package</span>
+                <span className="text-xs font-black text-amber-300">6–7 SOL Advance</span>
+              </div>
+              <div className="p-2 rounded-lg bg-[#0F0F18] border border-amber-500/30 text-center">
+                <span className="text-[11px] text-gray-400 block font-bold">Pro Package</span>
+                <span className="text-xs font-black text-amber-300">12–13 SOL Advance</span>
+              </div>
+            </div>
+            <p className="text-xs text-amber-200/90 pt-1.5 border-t border-amber-500/20 font-medium leading-relaxed">
+              <strong>Execution Terms:</strong> Work begins only after the advance fee is received. We will then confirm your coin specifications, gather requirements, and proceed with creation and listing as instructed. Remaining balance is due upon project completion, based on your chosen package.
+            </p>
           </div>
         </div>
       </div>

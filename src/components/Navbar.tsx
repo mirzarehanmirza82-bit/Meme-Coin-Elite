@@ -16,7 +16,8 @@ import {
   ShieldCheck, 
   FileCheck,
   ChevronRight,
-  Sparkles
+  Sparkles,
+  BarChart3
 } from 'lucide-react';
 import { SITE_CONFIG } from '../siteConfig';
 
@@ -49,6 +50,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
   const navLinks: { label: string; page: PageRoute }[] = [
     { label: "Home", page: "home" },
     { label: "Packages", page: "packages" },
+    { label: "Projects", page: "projects" },
     { label: "How It Works", page: "how-it-works" },
     { label: "Requirements", page: "requirements" },
     { label: "About", page: "about" },
@@ -57,7 +59,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
 
   const drawerMenuItems: { label: string; page: PageRoute; icon: React.ReactNode; badge?: string }[] = [
     { label: "Home", page: "home", icon: <Home className="w-4 h-4" /> },
-    { label: "Packages", page: "packages", icon: <Package className="w-4 h-4" />, badge: "$250 Offer" },
+    { label: "Packages", page: "packages", icon: <Package className="w-4 h-4" /> },
+    { label: "Projects Gallery", page: "projects", icon: <BarChart3 className="w-4 h-4 text-emerald-400" />, badge: "Proof" },
     { label: "Project Requirements", page: "requirements", icon: <FileText className="w-4 h-4" /> },
     { label: "How It Works", page: "how-it-works", icon: <Cpu className="w-4 h-4" /> },
     { label: "About Us", page: "about", icon: <Users className="w-4 h-4" /> },
@@ -166,19 +169,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
           </button>
         </div>
 
-        {/* Special Notice in Drawer */}
-        <div className="mx-4 mt-4 p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-between">
-          <div>
-            <div className="text-[11px] font-bold text-amber-300 uppercase tracking-wider">Startup Offer</div>
-            <div className="text-xs text-gray-300">First 2 Clients Any Package for $250</div>
-          </div>
-          <button 
-            onClick={() => handleNavClick("requirements")} 
-            className="text-[11px] bg-amber-400 text-black font-bold px-2.5 py-1 rounded-md"
-          >
-            Claim
-          </button>
-        </div>
 
         {/* Navigation List */}
         <div className="flex-1 overflow-y-auto p-4 space-y-1.5">

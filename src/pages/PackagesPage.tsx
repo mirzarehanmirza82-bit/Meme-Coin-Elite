@@ -2,6 +2,7 @@ import React from 'react';
 import { PageRoute } from '../types';
 import { PACKAGE_CONFIG, SITE_CONFIG } from '../siteConfig';
 import { NoticeBanner } from '../components/NoticeBanner';
+import { PackageAdvanceNotice } from '../components/PackageAdvanceNotice';
 import { 
   Check, 
   ArrowRight, 
@@ -42,19 +43,39 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onNavigate }) => {
         </p>
       </div>
 
-      {/* 3 Standalone Full Package Cards (NO Comparison Table) */}
+      {/* Support Period & Advance Fee Banner */}
+      <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#171422] via-[#1A1629] to-[#171422] border-2 border-amber-500/40 text-xs sm:text-sm text-gray-200 leading-relaxed shadow-lg">
+        <div className="flex items-start gap-3">
+          <Clock className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+          <div className="space-y-1">
+            <strong className="text-amber-300 font-extrabold uppercase tracking-wide block">
+              Package Support Periods & Operational Scope
+            </strong>
+            <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
+              Included package support periods (e.g. 14 Days for Advanced, 21 Days for Business, 30 Days for Pro) cover operational guidance and standard troubleshooting for delivered deliverables, and do not constitute unlimited revision labor.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* 3 Standalone Full Package Cards */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
         {/* ================= PACKAGE 1: ADVANCED ================= */}
         <div className="rounded-3xl bg-[#0F0F17] border border-amber-500/25 p-6 sm:p-8 flex flex-col justify-between shadow-xl relative">
           <div className="space-y-6">
             
+            <PackageAdvanceNotice 
+              packageName={PACKAGE_CONFIG.advanced.name} 
+              advanceFeeAmount={PACKAGE_CONFIG.advanced.advanceFee} 
+            />
+
             {/* Header / Discount */}
             <div className="flex items-center justify-between">
               <span className="text-xs uppercase font-bold tracking-wider text-amber-300 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">
                 {PACKAGE_CONFIG.advanced.badge}
               </span>
-              <span className="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+              <span className="text-sm sm:text-base font-black text-emerald-300 bg-emerald-950/90 border-2 border-emerald-400/60 px-4 py-1.5 rounded-xl shadow-lg shadow-emerald-950/70 tracking-wider uppercase">
                 SAVE ${PACKAGE_CONFIG.advanced.discount}
               </span>
             </div>
@@ -69,7 +90,7 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onNavigate }) => {
             </div>
 
             {/* Price Box */}
-            <div className="p-5 rounded-2xl bg-[#151522] border border-amber-500/20 space-y-2">
+            <div className="p-5 rounded-2xl bg-[#151522] border border-amber-500/20 space-y-3">
               <div className="flex items-baseline gap-3">
                 <span className="text-sm text-gray-500 line-through">
                   ${PACKAGE_CONFIG.advanced.originalPrice}
@@ -77,6 +98,10 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onNavigate }) => {
                 <span className="text-4xl font-extrabold text-white">
                   ${PACKAGE_CONFIG.advanced.price}
                 </span>
+              </div>
+              <div className="p-2.5 rounded-xl bg-amber-500/15 border border-amber-400/40 text-xs text-amber-200 flex items-center justify-between">
+                <span className="font-bold text-gray-200">Advance Fee Required:</span>
+                <span className="text-sm font-black text-amber-300 underline decoration-amber-400">{PACKAGE_CONFIG.advanced.advanceFee}</span>
               </div>
               <div className="text-xs font-bold text-amber-300 flex items-center gap-1.5">
                 <Coins className="w-4 h-4 text-amber-400" />
@@ -106,6 +131,13 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onNavigate }) => {
             {/* Detailed Explanations */}
             <div className="p-4 rounded-xl bg-[#13131C] border border-white/5 space-y-3 text-xs text-gray-300">
               <div>
+                <strong className="text-amber-300 block mb-0.5">Advance SOL Fee:</strong>
+                <p className="text-[11px] text-gray-400">
+                  {PACKAGE_CONFIG.advanced.advanceFee} is required up front as part of the package terms to proceed with the meme coin project. Work begins only after the advance fee is received.
+                </p>
+              </div>
+
+              <div>
                 <strong className="text-amber-300 block mb-0.5">Logo Design Included:</strong>
                 <p className="text-[11px] text-gray-400">
                   No image upload needed. Simply describe color, style, mascot, and symbol in the requirements form.
@@ -120,9 +152,9 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onNavigate }) => {
               </div>
 
               <div>
-                <strong className="text-amber-300 block mb-0.5">Support Period:</strong>
+                <strong className="text-amber-300 block mb-0.5">Support Period ({PACKAGE_CONFIG.advanced.supportPeriod}):</strong>
                 <p className="text-[11px] text-gray-400">
-                  {PACKAGE_CONFIG.advanced.supportPeriod} guidance for delivered project work. (Does not mean unlimited major modifications).
+                  {PACKAGE_CONFIG.advanced.supportPeriod} operational guidance and standard troubleshooting for delivered deliverables. (Does not constitute unlimited revision labor).
                 </p>
               </div>
             </div>
@@ -171,12 +203,17 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onNavigate }) => {
 
           <div className="space-y-6">
             
+            <PackageAdvanceNotice 
+              packageName={PACKAGE_CONFIG.business.name} 
+              advanceFeeAmount={PACKAGE_CONFIG.business.advanceFee} 
+            />
+
             {/* Header / Discount */}
             <div className="flex items-center justify-between pt-2">
               <span className="text-xs uppercase font-bold tracking-wider text-amber-300">
                 Expanded Launch Kit
               </span>
-              <span className="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+              <span className="text-sm sm:text-base font-black text-emerald-300 bg-emerald-950/90 border-2 border-emerald-400/60 px-4 py-1.5 rounded-xl shadow-lg shadow-emerald-950/70 tracking-wider uppercase">
                 SAVE ${PACKAGE_CONFIG.business.discount}
               </span>
             </div>
@@ -191,7 +228,7 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onNavigate }) => {
             </div>
 
             {/* Price Box */}
-            <div className="p-5 rounded-2xl bg-[#181828] border border-amber-500/30 space-y-2">
+            <div className="p-5 rounded-2xl bg-[#181828] border border-amber-500/30 space-y-3">
               <div className="flex items-baseline gap-3">
                 <span className="text-sm text-gray-500 line-through">
                   ${PACKAGE_CONFIG.business.originalPrice}
@@ -199,6 +236,10 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onNavigate }) => {
                 <span className="text-4xl font-black text-gold-gradient">
                   ${PACKAGE_CONFIG.business.price}
                 </span>
+              </div>
+              <div className="p-2.5 rounded-xl bg-amber-500/15 border border-amber-400/40 text-xs text-amber-200 flex items-center justify-between">
+                <span className="font-bold text-gray-200">Advance Fee Required:</span>
+                <span className="text-sm font-black text-amber-300 underline decoration-amber-400">{PACKAGE_CONFIG.business.advanceFee}</span>
               </div>
               <div className="text-xs font-bold text-amber-300 flex items-center gap-1.5">
                 <Coins className="w-4 h-4 text-amber-400" />
@@ -228,6 +269,13 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onNavigate }) => {
             {/* Details */}
             <div className="p-4 rounded-xl bg-[#151522] border border-amber-500/15 space-y-3 text-xs text-gray-300">
               <div>
+                <strong className="text-amber-300 block mb-0.5">Advance SOL Fee:</strong>
+                <p className="text-[11px] text-gray-400">
+                  {PACKAGE_CONFIG.business.advanceFee} is required up front as part of the package terms to proceed with the meme coin project. Work begins only after the advance fee is received.
+                </p>
+              </div>
+
+              <div>
                 <strong className="text-amber-300 block mb-0.5">Marketing Preparation:</strong>
                 <p className="text-[11px] text-gray-400">
                   Includes strategic launch roadmap and channel architecture. Direct ad spend remains separate.
@@ -235,9 +283,9 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onNavigate }) => {
               </div>
 
               <div>
-                <strong className="text-amber-300 block mb-0.5">Support Period:</strong>
+                <strong className="text-amber-300 block mb-0.5">Support Period ({PACKAGE_CONFIG.business.supportPeriod}):</strong>
                 <p className="text-[11px] text-gray-400">
-                  {PACKAGE_CONFIG.business.supportPeriod} extended guidance and troubleshooting.
+                  {PACKAGE_CONFIG.business.supportPeriod} operational guidance and standard troubleshooting for delivered deliverables. (Does not constitute unlimited revision labor).
                 </p>
               </div>
             </div>
@@ -281,12 +329,17 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onNavigate }) => {
         <div className="rounded-3xl bg-[#0F0F17] border border-amber-500/25 p-6 sm:p-8 flex flex-col justify-between shadow-xl relative">
           <div className="space-y-6">
             
+            <PackageAdvanceNotice 
+              packageName={PACKAGE_CONFIG.pro.name} 
+              advanceFeeAmount={PACKAGE_CONFIG.pro.advanceFee} 
+            />
+
             {/* Header / Discount */}
             <div className="flex items-center justify-between">
               <span className="text-xs uppercase font-bold tracking-wider text-amber-300 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">
                 {PACKAGE_CONFIG.pro.badge}
               </span>
-              <span className="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+              <span className="text-sm sm:text-base font-black text-emerald-300 bg-emerald-950/90 border-2 border-emerald-400/60 px-4 py-1.5 rounded-xl shadow-lg shadow-emerald-950/70 tracking-wider uppercase">
                 SAVE ${PACKAGE_CONFIG.pro.discount}
               </span>
             </div>
@@ -301,7 +354,7 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onNavigate }) => {
             </div>
 
             {/* Price Box */}
-            <div className="p-5 rounded-2xl bg-[#151522] border border-amber-500/20 space-y-2">
+            <div className="p-5 rounded-2xl bg-[#151522] border border-amber-500/20 space-y-3">
               <div className="flex items-baseline gap-3">
                 <span className="text-sm text-gray-500 line-through">
                   ${PACKAGE_CONFIG.pro.originalPrice}
@@ -309,6 +362,10 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onNavigate }) => {
                 <span className="text-4xl font-extrabold text-white">
                   ${PACKAGE_CONFIG.pro.price}
                 </span>
+              </div>
+              <div className="p-2.5 rounded-xl bg-amber-500/15 border border-amber-400/40 text-xs text-amber-200 flex items-center justify-between">
+                <span className="font-bold text-gray-200">Advance Fee Required:</span>
+                <span className="text-sm font-black text-amber-300 underline decoration-amber-400">{PACKAGE_CONFIG.pro.advanceFee}</span>
               </div>
               <div className="text-xs font-bold text-amber-300 flex items-center gap-1.5">
                 <Coins className="w-4 h-4 text-amber-400" />
@@ -338,6 +395,13 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onNavigate }) => {
             {/* Details */}
             <div className="p-4 rounded-xl bg-[#13131C] border border-white/5 space-y-3 text-xs text-gray-300">
               <div>
+                <strong className="text-amber-300 block mb-0.5">Advance SOL Fee:</strong>
+                <p className="text-[11px] text-gray-400">
+                  {PACKAGE_CONFIG.pro.advanceFee} is required up front as part of the package terms to proceed with the meme coin project. Work begins only after the advance fee is received.
+                </p>
+              </div>
+
+              <div>
                 <strong className="text-amber-300 block mb-0.5">Liquidity & Marketing Assistance:</strong>
                 <p className="text-[11px] text-gray-400">
                   Assistance with pool modeling, advertising planning, and post-launch scaling frameworks.
@@ -345,9 +409,9 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onNavigate }) => {
               </div>
 
               <div>
-                <strong className="text-amber-300 block mb-0.5">Support Period:</strong>
+                <strong className="text-amber-300 block mb-0.5">Support Period ({PACKAGE_CONFIG.pro.supportPeriod}):</strong>
                 <p className="text-[11px] text-gray-400">
-                  {PACKAGE_CONFIG.pro.supportPeriod} priority support channel and consultation.
+                  {PACKAGE_CONFIG.pro.supportPeriod} operational guidance and standard troubleshooting for delivered deliverables. (Does not constitute unlimited revision labor).
                 </p>
               </div>
             </div>
