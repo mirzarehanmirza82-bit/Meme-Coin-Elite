@@ -35,8 +35,29 @@ const FAQ_DATA: FAQItem[] = [
   {
     id: "faq-headline-mission",
     question: "What is Meme Coin Elite's core mission?",
-    answer: "Our guiding headline and core mission is 'Your Vision, Our Expertise: Launch Your Meme Coin Project Profitably'. We help founders navigate every step of meme coin setup, branding, parameter structuring, and listing preparation with complete transparency.",
+    answer: "Our guiding headline and core mission is 'Your Vision, Our Expertise: Launch Your Meme Coin Project Profitably'. Do you want to stand out from the crowd? Discover how we can create a unique meme coin venture for you—one that might be beyond what you imagined.",
     category: "About Our Services"
+  },
+  {
+    id: "faq-annual-quota",
+    question: "How many projects do you accept per year?",
+    answer: "We accept only 15 exclusive projects per year across all packages. Our stringent selection process means we decline 90% of requests, prioritizing only the most serious 10% to ensure exceptional attention to detail.",
+    category: "Exclusivity & Capacity",
+    highlight: true
+  },
+  {
+    id: "faq-delivery-timelines",
+    question: "What are the project delivery timelines for each package?",
+    answer: "Our delivery timelines are strictly scheduled: Advance: Delivered within 5 days. Business: Delivered within 8 days. Pro: Delivered within 13 days.",
+    category: "Delivery & Execution",
+    highlight: true
+  },
+  {
+    id: "faq-solo-management-privacy",
+    question: "Who will manage my project and how is my privacy guaranteed?",
+    answer: "Your complete project—from initial coin creation, listing, branding, social media platform setup, email configuration, to final website design—is managed solely by me. This one-on-one process ensures your absolute privacy and significantly reduces the risk of data compromise.",
+    category: "Privacy & Founder Execution",
+    highlight: true
   },
   {
     id: "faq-offer-contact",

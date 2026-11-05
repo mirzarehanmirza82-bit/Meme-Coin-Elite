@@ -21,7 +21,10 @@ import {
   TrendingUp,
   Lock,
   Eye,
-  BarChart3
+  BarChart3,
+  UserCheck,
+  Flame,
+  CalendarCheck
 } from 'lucide-react';
 
 interface HomePageProps {
@@ -50,8 +53,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           <span className="text-gold-gradient">Launch Your Meme Coin Project Profitably</span>
         </h1>
 
+        {/* Hook */}
+        <p className="mt-6 text-base sm:text-xl font-bold text-amber-300 max-w-3xl mx-auto leading-relaxed">
+          {SITE_CONFIG.standOutHook}
+        </p>
+
         {/* Subheading */}
-        <p className="mt-6 text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-normal leading-relaxed">
+        <p className="mt-3 text-sm sm:text-base text-gray-300 max-w-2xl mx-auto font-normal leading-relaxed">
           Professional meme coin creation, branding, project preparation and launch support — with clear requirements and direct client communication.
         </p>
 
@@ -90,10 +98,145 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </div>
           <div className="p-3 rounded-xl bg-[#111118] border border-amber-500/15 flex items-center justify-center gap-2">
             <Zap className="w-4 h-4 text-amber-400" />
-            <span>Fast Preparation</span>
+            <span>Fast Turnaround</span>
           </div>
         </div>
 
+      </section>
+
+      {/* 1.5 EXCLUSIVITY & 1-ON-1 SOLO MANAGEMENT GUARANTEE */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          
+          {/* Card 1: 15 Exclusive Projects / Year Cap */}
+          <div className="rounded-3xl bg-gradient-to-b from-[#161322] via-[#100E1A] to-[#0A0A10] border-2 border-amber-500/30 p-6 sm:p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-48 h-48 bg-amber-500/10 rounded-full blur-2xl pointer-events-none -mr-12 -mt-12"></div>
+            
+            <div className="space-y-4 relative z-10">
+              <div className="flex items-center justify-between gap-3 flex-wrap">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[11px] font-extrabold uppercase tracking-wider">
+                  <Flame className="w-3.5 h-3.5 text-amber-400" />
+                  <span>Strict Annual Quota</span>
+                </span>
+                <span className="text-xs font-mono font-bold text-gray-400">
+                  Priority: Top 10% Serious Only
+                </span>
+              </div>
+
+              <div>
+                <h3 className="font-heading text-xl sm:text-2xl font-black text-white">
+                  Only 15 Exclusive Projects Accepted Per Year
+                </h3>
+                <p className="mt-3 text-xs sm:text-sm text-gray-300 leading-relaxed">
+                  {SITE_CONFIG.exclusivityNotice}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-3 gap-2.5 pt-2 text-center">
+                <div className="p-2.5 rounded-xl bg-[#181525] border border-amber-500/20">
+                  <span className="text-[10px] text-gray-400 block uppercase">Annual Cap</span>
+                  <span className="text-base sm:text-lg font-black text-amber-400">15 Total</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-[#181525] border border-rose-500/20">
+                  <span className="text-[10px] text-gray-400 block uppercase">Declined</span>
+                  <span className="text-base sm:text-lg font-black text-rose-400">90%</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-[#181525] border border-emerald-500/20">
+                  <span className="text-[10px] text-gray-400 block uppercase">Accepted</span>
+                  <span className="text-base sm:text-lg font-black text-emerald-400">Top 10%</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-xs text-gray-400">
+              <span>Strict selection ensures dedicated execution</span>
+              <button
+                onClick={() => onNavigate("requirements")}
+                className="text-amber-400 font-bold hover:underline flex items-center gap-1 cursor-pointer"
+              >
+                <span>Apply for Slot</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          </div>
+
+          {/* Card 2: 1-on-1 Solo Management & Absolute Privacy */}
+          <div className="rounded-3xl bg-gradient-to-b from-[#131622] via-[#0D101A] to-[#0A0A10] border-2 border-emerald-500/30 p-6 sm:p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none -mr-12 -mt-12"></div>
+            
+            <div className="space-y-4 relative z-10">
+              <div className="flex items-center justify-between gap-3 flex-wrap">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[11px] font-extrabold uppercase tracking-wider">
+                  <UserCheck className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Solo Founder Execution</span>
+                </span>
+                <span className="text-xs font-mono font-bold text-emerald-400">
+                  Absolute Privacy Guaranteed
+                </span>
+              </div>
+
+              <div>
+                <h3 className="font-heading text-xl sm:text-2xl font-black text-white">
+                  Managed Solely by Me: 1-on-1 Confidentiality
+                </h3>
+                <p className="mt-3 text-xs sm:text-sm text-gray-300 leading-relaxed">
+                  {SITE_CONFIG.soloManagementGuarantee}
+                </p>
+              </div>
+
+              <div className="p-3 rounded-2xl bg-[#0F1420] border border-emerald-500/20 text-xs text-gray-300 space-y-1.5">
+                <div className="font-bold text-white text-[11px] uppercase tracking-wider flex items-center gap-1.5">
+                  <Lock className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Zero Data Compromise Scope</span>
+                </div>
+                <p className="text-[11px] text-gray-400">
+                  Initial coin creation • Listing • Branding • Social platform setup • Email configuration • Website design. No outside freelancers, no leaks.
+                </p>
+              </div>
+            </div>
+
+            <div className="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-xs text-gray-400">
+              <span>Direct encrypted communication</span>
+              <a
+                href={SITE_CONFIG.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-400 font-bold hover:underline flex items-center gap-1"
+              >
+                <span>Direct WhatsApp Line</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Delivery Timelines Strip */}
+        <div className="p-4 sm:p-5 rounded-2xl bg-[#0D0D14] border border-amber-500/25 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+          <div className="p-3 rounded-xl bg-[#14141E] border border-amber-500/15 flex items-center justify-between sm:justify-center gap-3">
+            <div className="text-left sm:text-center">
+              <span className="text-[10px] text-gray-400 uppercase font-bold block">Advance Package</span>
+              <span className="text-sm font-black text-emerald-400">Delivered within 5 days</span>
+            </div>
+            <Clock className="w-5 h-5 text-amber-400" />
+          </div>
+
+          <div className="p-3 rounded-xl bg-[#14141E] border border-amber-500/15 flex items-center justify-between sm:justify-center gap-3">
+            <div className="text-left sm:text-center">
+              <span className="text-[10px] text-gray-400 uppercase font-bold block">Business Package</span>
+              <span className="text-sm font-black text-emerald-400">Delivered within 8 days</span>
+            </div>
+            <Clock className="w-5 h-5 text-amber-400" />
+          </div>
+
+          <div className="p-3 rounded-xl bg-[#14141E] border border-amber-500/15 flex items-center justify-between sm:justify-center gap-3">
+            <div className="text-left sm:text-center">
+              <span className="text-[10px] text-gray-400 uppercase font-bold block">Pro Package</span>
+              <span className="text-sm font-black text-emerald-400">Delivered within 13 days</span>
+            </div>
+            <Clock className="w-5 h-5 text-amber-400" />
+          </div>
+        </div>
       </section>
 
       {/* 2. DIRECT CONSULTATION & INQUIRY NOTICE */}
@@ -168,6 +311,12 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <span className="text-sm sm:text-base font-black text-emerald-300 bg-emerald-950/90 border-2 border-emerald-400/60 px-3.5 py-1 rounded-xl shadow-lg shadow-emerald-950/70 tracking-wider uppercase">
                   SAVE ${PACKAGE_CONFIG.advanced.discount}
                 </span>
+              </div>
+
+              {/* Delivery Turnaround Badge */}
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold">
+                <Clock className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <span>{PACKAGE_CONFIG.advanced.deliveryTime}</span>
               </div>
 
               <div>
@@ -259,6 +408,12 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 </span>
               </div>
 
+              {/* Delivery Turnaround Badge */}
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold">
+                <Clock className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <span>{PACKAGE_CONFIG.business.deliveryTime}</span>
+              </div>
+
               <div>
                 <h3 className="font-heading text-2xl font-bold text-white">
                   {PACKAGE_CONFIG.business.name}
@@ -345,6 +500,12 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <span className="text-sm sm:text-base font-black text-emerald-300 bg-emerald-950/90 border-2 border-emerald-400/60 px-3.5 py-1 rounded-xl shadow-lg shadow-emerald-950/70 tracking-wider uppercase">
                   SAVE ${PACKAGE_CONFIG.pro.discount}
                 </span>
+              </div>
+
+              {/* Delivery Turnaround Badge */}
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold">
+                <Clock className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <span>{PACKAGE_CONFIG.pro.deliveryTime}</span>
               </div>
 
               <div>

@@ -132,6 +132,7 @@ CLIENT INFORMATION:
 
 PACKAGE DETAILS:
 - Selected Package: ${selectedPkg.name} Package
+- Delivery Timeline: ${selectedPkg.deliveryTime}
 - Package Reference Price: $${selectedPkg.price} (Original: $${selectedPkg.originalPrice}, Discount: Save $${selectedPkg.discount})
 - Advance Fee Required: ${selectedPkg.advanceFee}
 - Support Duration: ${selectedPkg.supportPeriod}
@@ -210,8 +211,11 @@ ${formData.additionalRequirements || "None provided"}
         <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
           Project <span className="text-gold-gradient">Requirements</span> Form
         </h1>
-        <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-          Provide your token parameters, mascot/logo concept, and optional preferences. When complete, click <strong className="text-amber-300">ORDER NOW</strong> to generate your finalized project brief.
+        <p className="text-base font-bold text-amber-300 max-w-2xl mx-auto leading-relaxed">
+          {SITE_CONFIG.standOutHook}
+        </p>
+        <p className="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-3xl mx-auto">
+          We accept only 15 exclusive projects per year across all packages. Every project is managed solely 1-on-1 for complete privacy. Provide your token parameters, logo concept, and preferences below.
         </p>
       </div>
 
@@ -325,6 +329,9 @@ ${formData.additionalRequirements || "None provided"}
                   <div className="mt-3 pt-2.5 border-t border-white/10 space-y-1">
                     <div className="text-xs font-extrabold text-amber-300">
                       Advance Fee: {pkg.advanceFee}
+                    </div>
+                    <div className="text-[11px] font-bold text-emerald-400">
+                      {pkg.deliveryTime}
                     </div>
                     <div className="text-[11px] text-gray-300">
                       Support: {pkg.supportPeriod}

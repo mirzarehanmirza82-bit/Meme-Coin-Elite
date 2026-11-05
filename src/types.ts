@@ -21,6 +21,7 @@ export interface PackageData {
   discount: number;
   solRequirement: string;
   advanceFee: string;
+  deliveryTime: string;
   badge?: string;
   description: string;
   supportPeriod: string;

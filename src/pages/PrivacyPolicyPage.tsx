@@ -44,7 +44,10 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
             <span>Overview & Commitment</span>
           </h3>
           <p>
-            Meme Coin Elite operates under our commitment: <strong className="text-white">"Your Vision, Our Expertise: Launch Your Meme Coin Project Profitably."</strong> We respect your privacy and are committed to protecting the information you share with us. This Privacy Policy explains what details we collect when you browse our website, submit a project brief, or communicate with our team, and how that information is handled.
+            Meme Coin Elite operates under our commitment: <strong className="text-white">"Your Vision, Our Expertise: Launch Your Meme Coin Project Profitably."</strong> Do you want to stand out from the crowd? Discover how we can create a unique meme coin venture for you—one that might be beyond what you imagined.
+          </p>
+          <p className="text-xs text-amber-200/90 bg-amber-500/10 p-3.5 rounded-xl border border-amber-500/20 leading-relaxed">
+            <strong className="text-white">Direct One-on-One Privacy Guarantee:</strong> Your complete project—from initial coin creation, listing, branding, social media platform setup, email configuration, to final website design—is managed solely by me. This one-on-one process ensures your absolute privacy and significantly reduces the risk of data compromise. We accept only 15 exclusive projects per year across all packages, prioritizing only the most serious 10%.
           </p>
         </section>
 

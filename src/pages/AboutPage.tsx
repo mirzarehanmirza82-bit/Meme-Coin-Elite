@@ -13,7 +13,11 @@ import {
   Layers, 
   Palette, 
   Compass,
-  FileCheck2
+  FileCheck2,
+  Lock,
+  UserCheck,
+  Flame,
+  Clock
 } from 'lucide-react';
 
 interface AboutPageProps {
@@ -61,9 +65,78 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
         <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
           About <span className="text-gold-gradient">Meme Coin Elite</span>
         </h1>
-        <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-          Meme Coin Elite is a growing digital service platform focused on helping clients prepare meme coin projects, branding, project information, launch preparation and promotional planning.
+        <p className="text-base sm:text-lg font-bold text-amber-300 max-w-3xl mx-auto leading-relaxed">
+          {SITE_CONFIG.standOutHook}
         </p>
+        <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-2xl mx-auto">
+          Meme Coin Elite is an exclusive digital launchpad focused on crafting unique, high-tier meme coin ventures with complete privacy and bespoke direct execution.
+        </p>
+      </div>
+
+      {/* Exclusivity & 1-on-1 Privacy Framework */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        {/* 15 Projects/Year Quota */}
+        <div className="p-6 rounded-3xl bg-gradient-to-b from-[#181424] to-[#0E0C17] border-2 border-amber-500/30 space-y-3 shadow-xl">
+          <div className="flex items-center justify-between gap-2">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider">
+              <Flame className="w-3.5 h-3.5 text-amber-400" />
+              <span>Strict Quota • 15 Projects / Year</span>
+            </span>
+            <span className="text-xs font-mono text-rose-400 font-bold">
+              90% Declined
+            </span>
+          </div>
+          <h3 className="font-heading text-xl font-bold text-white">
+            High-Standard Selection Process
+          </h3>
+          <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+            {SITE_CONFIG.exclusivityNotice}
+          </p>
+          <div className="p-3 rounded-xl bg-[#14121F] border border-white/5 text-xs text-amber-300/90 font-medium">
+            We focus all bandwidth on the top 10% most serious creators to ensure maximum craft and execution.
+          </div>
+        </div>
+
+        {/* 1-on-1 Solo Management Guarantee */}
+        <div className="p-6 rounded-3xl bg-gradient-to-b from-[#111824] to-[#0A0F17] border-2 border-emerald-500/30 space-y-3 shadow-xl">
+          <div className="flex items-center justify-between gap-2">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider">
+              <UserCheck className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Direct Founder Execution</span>
+            </span>
+            <span className="text-xs font-mono text-emerald-400 font-bold">
+              100% Confidential
+            </span>
+          </div>
+          <h3 className="font-heading text-xl font-bold text-white">
+            Solely Managed 1-on-1 for Absolute Privacy
+          </h3>
+          <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+            {SITE_CONFIG.soloManagementGuarantee}
+          </p>
+          <div className="p-3 rounded-xl bg-[#0D131F] border border-white/5 text-xs text-emerald-300/90 font-medium flex items-center gap-2">
+            <Lock className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+            <span>Zero intermediary risk: no junior freelancers or shared contractor credentials.</span>
+          </div>
+        </div>
+
+      </div>
+
+      {/* Delivery Turnaround Strip */}
+      <div className="p-4 sm:p-5 rounded-2xl bg-[#0F0F17] border border-amber-500/20 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+        <div className="p-3 rounded-xl bg-[#151522] border border-white/5">
+          <span className="text-[10px] text-gray-400 uppercase font-bold block">Advance Package</span>
+          <span className="text-sm font-bold text-emerald-400">Delivered within 5 days</span>
+        </div>
+        <div className="p-3 rounded-xl bg-[#151522] border border-white/5">
+          <span className="text-[10px] text-gray-400 uppercase font-bold block">Business Package</span>
+          <span className="text-sm font-bold text-emerald-400">Delivered within 8 days</span>
+        </div>
+        <div className="p-3 rounded-xl bg-[#151522] border border-white/5">
+          <span className="text-[10px] text-gray-400 uppercase font-bold block">Pro Package</span>
+          <span className="text-sm font-bold text-emerald-400">Delivered within 13 days</span>
+        </div>
       </div>
 
       {/* Prominent Startup Notice */}

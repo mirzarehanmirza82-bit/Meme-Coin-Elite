@@ -18,7 +18,10 @@ import {
   Globe,
   Share2,
   PieChart,
-  Coins
+  Coins,
+  UserCheck,
+  Flame,
+  Lock
 } from 'lucide-react';
 
 interface PackagesPageProps {
@@ -30,17 +33,72 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onNavigate }) => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
       
       {/* Page Header */}
-      <div className="text-center max-w-3xl mx-auto space-y-4">
+      <div className="text-center max-w-4xl mx-auto space-y-4">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider">
           <Sparkles className="w-3.5 h-3.5" />
-          <span>Transparent Service Tiers</span>
+          <span>Exclusive Bespoke Launchpad</span>
         </div>
         <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
           Meme Coin Creation <span className="text-gold-gradient">Packages</span>
         </h1>
-        <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-          Comprehensive project preparation and launch support tiers. Each package card outlines everything included, optional add-on services, and blockchain requirements.
+        <p className="text-base sm:text-lg font-bold text-amber-300 max-w-3xl mx-auto leading-relaxed">
+          {SITE_CONFIG.standOutHook}
         </p>
+        <p className="text-xs sm:text-sm text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          Comprehensive project preparation and launch support tiers. Each package card outlines everything included, delivery turnaround, and blockchain requirements.
+        </p>
+      </div>
+
+      {/* 15 Projects/Year Exclusivity & 1-on-1 Solo Management Banner */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        {/* Exclusivity Cap */}
+        <div className="p-6 rounded-3xl bg-gradient-to-b from-[#181424] to-[#0E0C17] border-2 border-amber-500/30 space-y-3 shadow-xl">
+          <div className="flex items-center justify-between gap-3 flex-wrap">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[11px] font-extrabold uppercase tracking-wider">
+              <Flame className="w-3.5 h-3.5 text-amber-400" />
+              <span>Strict Quota • 15 Projects / Year</span>
+            </span>
+            <span className="text-xs font-mono font-bold text-amber-400">
+              Acceptance: Top 10%
+            </span>
+          </div>
+          <h3 className="font-heading text-lg sm:text-xl font-bold text-white">
+            Selective Client Onboarding
+          </h3>
+          <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+            {SITE_CONFIG.exclusivityNotice}
+          </p>
+          <div className="pt-2 flex items-center gap-4 text-xs font-semibold text-gray-400">
+            <span className="text-amber-300">• 15 Projects Maximum</span>
+            <span className="text-rose-400">• 90% Requests Declined</span>
+            <span className="text-emerald-400">• 100% Focus on Serious Founders</span>
+          </div>
+        </div>
+
+        {/* 1-on-1 Solo Management Guarantee */}
+        <div className="p-6 rounded-3xl bg-gradient-to-b from-[#121824] to-[#0B0F17] border-2 border-emerald-500/30 space-y-3 shadow-xl">
+          <div className="flex items-center justify-between gap-3 flex-wrap">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[11px] font-extrabold uppercase tracking-wider">
+              <UserCheck className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Direct Founder Execution</span>
+            </span>
+            <span className="text-xs font-mono font-bold text-emerald-400">
+              Zero Data Compromise
+            </span>
+          </div>
+          <h3 className="font-heading text-lg sm:text-xl font-bold text-white">
+            Solely Managed 1-on-1 for Absolute Privacy
+          </h3>
+          <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+            {SITE_CONFIG.soloManagementGuarantee}
+          </p>
+          <div className="pt-2 flex items-center gap-2 text-xs font-medium text-emerald-300/90">
+            <Lock className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+            <span>Coin Creation • Listing • Branding • Socials • Email • Website</span>
+          </div>
+        </div>
+
       </div>
 
       {/* Support Period & Advance Fee Banner */}
@@ -78,6 +136,12 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onNavigate }) => {
               <span className="text-sm sm:text-base font-black text-emerald-300 bg-emerald-950/90 border-2 border-emerald-400/60 px-4 py-1.5 rounded-xl shadow-lg shadow-emerald-950/70 tracking-wider uppercase">
                 SAVE ${PACKAGE_CONFIG.advanced.discount}
               </span>
+            </div>
+
+            {/* Delivery Turnaround Badge */}
+            <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold">
+              <Clock className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+              <span>{PACKAGE_CONFIG.advanced.deliveryTime}</span>
             </div>
 
             <div>
@@ -218,6 +282,12 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onNavigate }) => {
               </span>
             </div>
 
+            {/* Delivery Turnaround Badge */}
+            <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold">
+              <Clock className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+              <span>{PACKAGE_CONFIG.business.deliveryTime}</span>
+            </div>
+
             <div>
               <h2 className="font-heading text-3xl font-extrabold text-white">
                 {PACKAGE_CONFIG.business.name}
@@ -342,6 +412,12 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onNavigate }) => {
               <span className="text-sm sm:text-base font-black text-emerald-300 bg-emerald-950/90 border-2 border-emerald-400/60 px-4 py-1.5 rounded-xl shadow-lg shadow-emerald-950/70 tracking-wider uppercase">
                 SAVE ${PACKAGE_CONFIG.pro.discount}
               </span>
+            </div>
+
+            {/* Delivery Turnaround Badge */}
+            <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold">
+              <Clock className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+              <span>{PACKAGE_CONFIG.pro.deliveryTime}</span>
             </div>
 
             <div>

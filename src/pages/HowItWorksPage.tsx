@@ -68,13 +68,14 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onNavigate }) =>
     },
     {
       stepNumber: "05",
-      title: "Project Creation & Delivery",
+      title: "Project Creation & Guaranteed Delivery",
       icon: <Rocket className="w-6 h-6 text-amber-400" />,
-      description: "Our team executes your custom logo, token configuration, branding assets, and launch checklist. You receive everything organized for your official deployment with included operational support (14 Days for Advanced, 21 Days for Business, 30 Days for Pro).",
+      description: "Your complete project—from initial coin creation, listing, branding, social media platform setup, email configuration, to final website design—is managed solely by me. This one-on-one process ensures your absolute privacy and significantly reduces the risk of data compromise. Delivery timelines: Advance within 5 days, Business within 8 days, Pro within 13 days.",
       keyPoints: [
-        "High-fidelity branding kit and logo files delivered",
-        "Complete smart token configuration & metadata assets",
-        "Included support for operational guidance and troubleshooting"
+        "Strict delivery: Advance (5 days), Business (8 days), Pro (13 days)",
+        "Managed solely 1-on-1 for complete privacy and zero data leaks",
+        "High-fidelity branding kit, token configuration & listing deployment assets",
+        "Included operational support (14 Days for Advance, 21 Days for Business, 30 Days for Pro)"
       ]
     }
   ];
@@ -83,16 +84,19 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onNavigate }) =>
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
       
       {/* Header */}
-      <div className="text-center max-w-3xl mx-auto space-y-4">
+      <div className="text-center max-w-4xl mx-auto space-y-4">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider">
           <Sparkles className="w-3.5 h-3.5" />
-          <span>Transparent 5-Step Process</span>
+          <span>Exclusive 5-Step Process</span>
         </div>
         <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
           How It <span className="text-gold-gradient">Works</span>
         </h1>
-        <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-          From concept submission to final launch delivery, here is our simple, step-by-step collaboration model.
+        <p className="text-base sm:text-lg font-bold text-amber-300 max-w-3xl mx-auto leading-relaxed">
+          {SITE_CONFIG.standOutHook}
+        </p>
+        <p className="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-2xl mx-auto">
+          We accept only 15 exclusive projects per year across all packages. Every deliverable is managed solely 1-on-1 by the founder for complete privacy and rapid turnaround.
         </p>
       </div>
 

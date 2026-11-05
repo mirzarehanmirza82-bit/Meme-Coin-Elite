@@ -63,7 +63,17 @@ export const SITE_CONFIG = {
   advanceFeeNotice: "An advance fee is required based on the requirements of the individual package and is needed up front as part of the package terms to proceed with the meme coin project.",
   advanceTerms: "Work begins only after the advance fee is received. We will then confirm your coin specifications, gather requirements, and proceed with creation and listing as instructed. Remaining balance is due upon project completion, based on your chosen package.",
   supportPeriodDisclaimer: "Included package support periods (e.g. 14 Days for Advanced, 21 Days for Business, 30 Days for Pro) cover operational guidance and standard troubleshooting for delivered deliverables, and do not constitute unlimited revision labor.",
-  mainHeadline: "Your Vision, Our Expertise: Launch Your Meme Coin Project Profitably"
+  mainHeadline: "Your Vision, Our Expertise: Launch Your Meme Coin Project Profitably",
+  
+  // Exclusive Launchpad Hook & Annual Cap
+  standOutHook: "Do you want to stand out from the crowd? Discover how we can create a unique meme coin venture for you—one that might be beyond what you imagined.",
+  exclusivityNotice: "Meme Coin Creation Services: We accept only 15 exclusive projects per year across all packages. Our stringent selection process means we decline 90% of requests, prioritizing only the most serious 10%.",
+  soloManagementGuarantee: "Your complete project—from initial coin creation, listing, branding, social media platform setup, email configuration, to final website design—is managed solely by me. This one-on-one process ensures your absolute privacy and significantly reduces the risk of data compromise.",
+  annualCapacity: {
+    totalCap: 15,
+    rejectionRate: "90%",
+    acceptanceRate: "10%"
+  }
 };
 
 export const PACKAGE_CONFIG = {
@@ -75,10 +85,12 @@ export const PACKAGE_CONFIG = {
     discount: 81,
     advanceFee: "5–7 SOL",
     solRequirement: "5.7 SOL",
+    deliveryTime: "Delivered within 5 days",
     badge: "Popular Starter",
     description: "Essential full-service meme coin setup and launch preparation for aspiring project founders.",
     supportPeriod: "14 Days",
     includedFeatures: [
+      "Delivered within 5 days (Fast turnaround)",
       "Meme coin creation & smart token configuration",
       "Professional branding & visual styling guide",
       "Custom logo design based on your instructions (No image upload required)",
@@ -96,6 +108,7 @@ export const PACKAGE_CONFIG = {
       { name: "Additional Custom Changes (Scope revisions)", price: "+$25" }
     ],
     notes: [
+      "Delivery: Delivered within 5 days",
       "Advance Fee: 5–7 SOL required up front as part of the package terms to proceed with the project",
       "Project Requirement: 5.7 SOL (blockchain launch requirement, not sent through website)",
       "Advertising is not included (optional budgets: $100, $200, $300, $500, $1,000)",
@@ -111,10 +124,12 @@ export const PACKAGE_CONFIG = {
     discount: 239,
     advanceFee: "6–7 SOL",
     solRequirement: "6–7 SOL",
+    deliveryTime: "Delivered within 8 days",
     badge: "Most Recommended",
     description: "Expanded branding, marketing preparation, and project guidance for dedicated meme coin teams.",
     supportPeriod: "21 Days",
     includedFeatures: [
+      "Delivered within 8 days (Comprehensive pipeline)",
       "Advanced meme coin creation assistance",
       "Professional branding & comprehensive aesthetic suite",
       "Logo design tailored to client's detailed creative vision",
@@ -134,6 +149,7 @@ export const PACKAGE_CONFIG = {
       { name: "Additional Custom Changes", price: "+$25" }
     ],
     notes: [
+      "Delivery: Delivered within 8 days",
       "Advance Fee: 6–7 SOL required up front as part of the package terms to proceed with the project",
       "Project Requirement: 6–7 SOL (blockchain launch requirement, not sent through website)",
       "Marketing preparation included; advertising budgets separate",
@@ -149,10 +165,12 @@ export const PACKAGE_CONFIG = {
     discount: 350,
     advanceFee: "12–13 SOL",
     solRequirement: "12–13 SOL",
+    deliveryTime: "Delivered within 13 days",
     badge: "Elite Launchpad",
     description: "Highest-tier full-scale launch support, priority communication, liquidity strategy, and post-launch guidance.",
     supportPeriod: "30 Days",
     includedFeatures: [
+      "Delivered within 13 days (Bespoke end-to-end execution)",
       "Premium meme coin creation assistance & custom structuring",
       "Premium branding, banners, color palettes & badges",
       "Professional logo design crafted to high fidelity",
@@ -173,6 +191,7 @@ export const PACKAGE_CONFIG = {
       { name: "Additional Custom Changes", price: "+$25" }
     ],
     notes: [
+      "Delivery: Delivered within 13 days",
       "Advance Fee: 12–13 SOL required up front as part of the package terms to proceed with the project",
       "Project Requirement: 12–13 SOL (blockchain launch requirement, not sent through website)",
       "Advertising & liquidity are separate direct expenses",

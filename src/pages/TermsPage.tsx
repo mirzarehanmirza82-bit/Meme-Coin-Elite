@@ -103,10 +103,38 @@ export const TermsPage: React.FC<TermsPageProps> = ({ onNavigate }) => {
           </p>
         </section>
 
-        {/* Section 4: Client Responsibility & Prohibited Use */}
-        <section className="space-y-3">
+        {/* Section 4: Annual Capacity, Delivery Schedules & 1-on-1 Privacy */}
+        <section className="p-5 rounded-2xl bg-[#14121F] border border-amber-500/25 space-y-3">
           <h3 className="font-heading text-lg font-bold text-white flex items-center gap-2">
             <span className="text-amber-400">4.</span>
+            <span>Annual Exclusivity Cap, Delivery Timelines & Solo Management Privacy</span>
+          </h3>
+          <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+            <strong className="text-amber-300">Annual Exclusivity:</strong> We accept only 15 exclusive projects per year across all packages. Our stringent selection process means we decline 90% of requests, prioritizing only the most serious 10%.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 py-1 text-xs">
+            <div className="p-2.5 rounded-xl bg-[#0D0D14] border border-white/5">
+              <span className="text-gray-400 block font-bold">Advance Package</span>
+              <span className="text-emerald-400 font-extrabold text-sm">Delivered within 5 days</span>
+            </div>
+            <div className="p-2.5 rounded-xl bg-[#0D0D14] border border-white/5">
+              <span className="text-gray-400 block font-bold">Business Package</span>
+              <span className="text-emerald-400 font-extrabold text-sm">Delivered within 8 days</span>
+            </div>
+            <div className="p-2.5 rounded-xl bg-[#0D0D14] border border-white/5">
+              <span className="text-gray-400 block font-bold">Pro Package</span>
+              <span className="text-emerald-400 font-extrabold text-sm">Delivered within 13 days</span>
+            </div>
+          </div>
+          <p className="text-xs text-gray-300 leading-relaxed pt-1">
+            <strong className="text-amber-300">Sole Management Privacy Guarantee:</strong> Your complete project—from initial coin creation, listing, branding, social media platform setup, email configuration, to final website design—is managed solely by me. This one-on-one process ensures your absolute privacy and significantly reduces the risk of data compromise.
+          </p>
+        </section>
+
+        {/* Section 5: Client Responsibility & Prohibited Use */}
+        <section className="space-y-3">
+          <h3 className="font-heading text-lg font-bold text-white flex items-center gap-2">
+            <span className="text-amber-400">5.</span>
             <span>Client Responsibility & Prohibited Projects</span>
           </h3>
           <p>
